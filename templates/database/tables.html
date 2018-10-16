@@ -1,0 +1,104 @@
+{% extends 'xadmin/base_site.html' %}
+{% load i18n %}
+{% block nav_title %}
+    <i class="{{ icon }}"></i> {{ title }}
+{% endblock %}
+{% block content %}
+    {% if data %}
+
+
+        <div class="pagination pagination-sm pagination-left pagination-inline">
+            <li><span><span class="text-success">{{ count }}</span>条{{ title }}</span></li>
+
+            {% if data.has_previous %}
+                <li><a href="?page={{ data.previous_page_number }}">上一页</a></li>
+            {% endif %}
+
+            {% for i in page_range %}
+                {% if data.number == i %}
+                    <li><a style="color: black" href="?page={{ i }}">{{ i }}</a></li>
+                {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+
+            {% endfor %}
+            {% if data.has_next %}
+                <li><a href="?page={{ data.next_page_number }}">下一页</a></li>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="results table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th class="sortable">表名</th>
+                <th class="sortable">引擎</th>
+                <th class="sortable">收录条数</th>
+                <th class="sortable">空间大小（MB）</th>
+                <th class="sortable">创建时间</th>
+                <th class="sortable">更新时间</th>
+                <th class="sortable">编码</th>
+                <th class="sortable">说明</th>
+                {% if permission %}
+                    <th class="sortable">操作</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% if permission %}
+                {% for foo in data %}
+                    <tr>
+                        <td>{{ foo.table_name }}</td>
+                        <td>{{ foo.engine }}</td>
+                        <td>{{ foo.table_rows }}</td>
+                        <td>{{ foo.size_MB }}</td>
+                        <td class="nowrap">{{ foo.create_time }}</td>
+                        <td class="nowrap">{{ foo.update_time }}</td>
+                        <td>{{ foo.table_collation }}</td>
+                        <td>{{ foo.table_comment }}</td>
+                        <td><a href="{{ foo.editor }}">编辑</a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                {% for foo in data %}
+                    <tr>
+                        <td>{{ foo.table_name }}</td>
+                        <td>{{ foo.engine }}</td>
+                        <td>{{ foo.table_rows }}</td>
+                        <td>{{ foo.size_MB }}</td>
+                        <td class="nowrap">{{ foo.create_time }}</td>
+                        <td class="nowrap">{{ foo.update_time }}</td>
+                        <td>{{ foo.table_collation }}</td>
+                        <td>{{ foo.table_comment }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+
+
+            </tbody>
+        </table>
+    </div>
+    {% if data %}
+
+
+        <div class="pagination">
+            <li><span><span class="text-success">{{ count }}</span>条{{ title }}</span></li>
+
+            {% if data.has_previous %}
+                <li><a href="?page={{ data.previous_page_number }}">上一页</a></li>
+            {% endif %}
+
+            {% for i in page_range %}
+                {% if data.number == i %}
+                    <li><a style="color: black" href="?page={{ i }}">{{ i }}</a></li>
+                {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+
+            {% endfor %}
+            {% if data.has_next %}
+                <li><a href="?page={{ data.next_page_number }}">下一页</a></li>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

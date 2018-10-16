@@ -1,0 +1,49 @@
+
+.content {
+    width: 100%;
+    height: 1700px;
+    position: relative;
+    background: #afd7ed;
+}
+.box{
+        background: white;
+        height: 1500px;
+}
+.content-body {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.form {
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+.help-block {
+    font-size: 10px;
+}
+
+input {
+    height: 30px;
+}
+
+label {
+    font-size: 25px;
+}
+
+.btn {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.t {
+    background: red;
+}
+
+#email {
+    width: 50%;
+    margin: 0 auto;
+    font-size: xx-large;
+}

@@ -1,0 +1,42 @@
+{% extends 'xadmin/base_site.html' %}
+{% load i18n %}
+{% block content %}
+    <div class="results table-responsive content-bodydb">
+        <div style="width: 70% ;margin: 0 auto;">
+            <dl class="dl-horizontal ">
+                <dt><strong>表创建语句:</strong></dt>
+                <dd>{{ data |safe }}</dd>
+                <dt><strong>sql语句:</strong></dt>
+                <dd>
+                    <form class="form" action="{{ request.get_full_path }}" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="alert alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <strong>WARNING: {{ field.errors }}</strong>
+                                </div>
+                            {% endif %}
+                            {% if field.help_text %}
+                                <p class="help text-small text-muted">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        {% endfor %}
+                        <br>
+                        <br>
+                        <div style="margin-left: 60px">
+                            <button style="width: 500px" type="submit" class="btn btn-success btn-lg" id="submit">
+                                提交
+                            </button>
+                        </div>
+                    </form>
+                </dd>
+            </dl>
+            <div style="width: 50% ;margin: 0 auto;">
+                <a style="width: 500px" type="button" class="btn btn-danger btn-lg "
+                   href="{% if next %}{{ next }}{% else %} /xadmin/test{% endif %}">关闭</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

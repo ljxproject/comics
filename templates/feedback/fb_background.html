@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'feedback/css/feedback.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+
+<script src="{% static 'feedback/js/feedback.js' %}"></script>
+
+</html>

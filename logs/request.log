@@ -1,0 +1,125 @@
+2018-09-09 03:50:38,775 [Thread-24:123145427025920] [django.request:152] [WARNING]- Not Found: /admin/
+2018-09-09 03:51:33,518 [Thread-26:123145427025920] [django.request:152] [WARNING]- Not Found: /ueditor
+2018-09-09 03:51:51,734 [Thread-28:123145427025920] [django.request:152] [WARNING]- Not Found: /ueditor/
+2018-09-10 02:05:45,289 [Thread-12:123145584062464] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:05:45,293 [Thread-13:123145589317632] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:05:45,297 [Thread-14:123145594572800] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:05:45,301 [Thread-15:123145578807296] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:05:45,371 [Thread-16:123145578807296] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:05:45,376 [Thread-17:123145578807296] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:05:45,379 [Thread-18:123145584062464] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:05:45,383 [Thread-19:123145578807296] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:05:45,994 [Thread-21:123145578807296] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:05:45,997 [Thread-22:123145584062464] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:05:46,001 [Thread-23:123145589317632] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:05:46,004 [Thread-24:123145578807296] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:06:29,168 [Thread-27:123145578807296] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:06:29,227 [Thread-28:123145578807296] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:06:29,231 [Thread-29:123145584062464] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:06:29,234 [Thread-30:123145578807296] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:06:47,253 [Thread-34:123145578807296] [django.request:135] [ERROR]- Internal Server Error: /users/perfection/avatar/
+Traceback (most recent call last):
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/viewsets.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 443, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/grave/Desktop/work/comics/userapi/views/perfection.py", line 122, in update
+    if issubclass(re, dict):
+TypeError: issubclass() arg 1 must be a class
+2018-09-10 02:07:50,473 [Thread-2:123145450524672] [django.request:135] [ERROR]- Internal Server Error: /users/perfection/avatar/
+Traceback (most recent call last):
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/viewsets.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 443, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/grave/Desktop/work/comics/userapi/views/perfection.py", line 131, in update
+    avatar.save(pathname)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/PIL/Image.py", line 1947, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/grave/Desktop/work/comics/media/uploads/avatar/20180910100750_16919@pm.me.png'
+2018-09-10 02:10:31,095 [Thread-2:123145548410880] [django.request:135] [ERROR]- Internal Server Error: /users/perfection/avatar/
+Traceback (most recent call last):
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/viewsets.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 443, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/grave/Desktop/work/comics/userapi/views/perfection.py", line 131, in update
+    avatar.save(pathname)
+  File "/Users/grave/Desktop/venv/comics_venv/lib/python3.6/site-packages/PIL/Image.py", line 1947, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/grave/Desktop/work/comics/media/uploads/avatar/20180910101030_16919@pm.me.png'
+2018-09-10 02:11:46,103 [Thread-4:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101145_16919@pm.me.png
+2018-09-10 02:12:04,111 [Thread-7:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101203_16919@pm.me.png
+2018-09-10 02:12:15,959 [Thread-10:123145408159744] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:12:15,964 [Thread-11:123145408159744] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:12:15,967 [Thread-12:123145413414912] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:12:15,970 [Thread-13:123145408159744] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:12:16,723 [Thread-15:123145408159744] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:12:16,726 [Thread-16:123145413414912] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:12:16,731 [Thread-17:123145408159744] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:12:18,175 [Thread-20:123145408159744] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:12:18,179 [Thread-21:123145413414912] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:12:18,182 [Thread-22:123145418670080] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:12:19,396 [Thread-24:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101203_16919@pm.me.png
+2018-09-10 02:12:20,928 [Thread-27:123145408159744] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:12:20,932 [Thread-28:123145413414912] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:12:20,935 [Thread-29:123145408159744] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:12:20,939 [Thread-30:123145413414912] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:12:21,918 [Thread-32:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101203_16919@pm.me.png
+2018-09-10 02:12:26,646 [Thread-34:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101203_16919@pm.me.png
+2018-09-10 02:12:26,919 [Thread-37:123145408159744] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:12:26,923 [Thread-38:123145413414912] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:12:26,926 [Thread-39:123145408159744] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:12:26,929 [Thread-40:123145413414912] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:12:27,454 [Thread-42:123145408159744] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:12:27,457 [Thread-43:123145413414912] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:12:27,461 [Thread-44:123145408159744] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:12:28,330 [Thread-46:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101203_16919@pm.me.png
+2018-09-10 02:12:39,316 [Thread-49:123145408159744] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101238_16919@pm.me.png
+2018-09-10 02:15:32,598 [Thread-5:123145483104256] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:15:32,602 [Thread-6:123145488359424] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:15:32,605 [Thread-7:123145493614592] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:15:32,609 [Thread-8:123145483104256] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:15:34,677 [Thread-10:123145483104256] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101238_16919@pm.me.png
+2018-09-10 02:15:49,194 [Thread-19:123145483104256] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101548_16919@pm.me.png
+2018-09-10 02:16:34,783 [Thread-22:123145483104256] [django.request:152] [WARNING]- Not Found: /img/113/my/com_cover_img.jpg
+2018-09-10 02:16:34,796 [Thread-23:123145483104256] [django.request:152] [WARNING]- Not Found: /img/106/my/com_cover_img.jpg
+2018-09-10 02:16:34,801 [Thread-25:123145493614592] [django.request:152] [WARNING]- Not Found: /img/101/my/com_cover_img.jpg
+2018-09-10 02:16:34,802 [Thread-24:123145488359424] [django.request:152] [WARNING]- Not Found: /img/100/my/com_cover_img.jpg
+2018-09-10 02:16:36,093 [Thread-27:123145483104256] [django.request:152] [WARNING]- Not Found: /uploads/avatar/20180910101548_16919@pm.me.png

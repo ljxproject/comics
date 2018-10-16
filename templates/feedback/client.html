@@ -1,0 +1,19 @@
+{% extends 'feedback/fb_background.html' %}
+{% load rest_framework %}
+{% block title %}
+    <title>Manga Burger feedback</title>
+{% endblock %}
+
+{% block content %}
+    <form class="form" action="{% url 'userapi:fbd' %}" method="post"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        {% render_form serializer template_pack='rest_framework/vertical' %}
+        <div class="btn">
+            <button type="submit" class="btn btn-success btn-lg" id="submit">Submit</button>
+            <br>
+            <br>
+            <a type="button" class="btn btn-danger btn-lg" id="cancel" href="{% url 'userapi:fbdr' %}">Cancel</a>
+        </div>
+    </form>
+{% endblock %}

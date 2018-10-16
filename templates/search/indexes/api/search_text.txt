@@ -1,0 +1,1 @@
+{{ object.my_title }}

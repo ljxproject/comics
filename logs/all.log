@@ -1,0 +1,3 @@
+2018-09-10 02:06:47,277 [Thread-34:123145578807296] [django.server:124] [ERROR]- "POST /users/perfection/avatar/ HTTP/1.1" 500 17904
+2018-09-10 02:07:50,489 [Thread-2:123145450524672] [django.server:124] [ERROR]- "POST /users/perfection/avatar/ HTTP/1.1" 500 18255
+2018-09-10 02:10:31,110 [Thread-2:123145548410880] [django.server:124] [ERROR]- "POST /users/perfection/avatar/ HTTP/1.1" 500 18250
