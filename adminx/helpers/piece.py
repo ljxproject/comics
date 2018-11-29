@@ -1,4 +1,5 @@
-from datetime import datetime
+import os
+import datetime
 
 from django.db.models import Sum
 from django.utils import timezone
@@ -30,9 +31,12 @@ def sum_size(string_list):
     return size
 
 
-def get_order_parm():
-    today = datetime.today()
-    created_date = timezone.make_aware(datetime(today.year, today.month, today.day, 0, 0, 0))
+def get_order_parm(is_today=None):
+    if is_today:
+        day = datetime.datetime.today()
+    else:
+        day = datetime.datetime.today() - datetime.timedelta(days=1)
+    created_date = timezone.make_aware(datetime.datetime(day.year, day.month, day.day, 0, 0, 0))
     base_query_set = Transaction.filter(created__gte=created_date)
 
     total_order = base_query_set.count()
@@ -42,7 +46,7 @@ def get_order_parm():
     pre_income = base_query_set.filter(status=1).aggregate(income=Sum('gmv'))['income']
     income = str(pre_income if pre_income else "0")
     expired_order = total_order - paid_order - no_paid_order
-    return today, income, expect_income, paid_order, no_paid_order, expired_order, total_order
+    return day, income, expect_income, paid_order, no_paid_order, expired_order, total_order
 
 
 def s_to_time(seconds):
@@ -51,3 +55,9 @@ def s_to_time(seconds):
         h, m = divmod(m, 60)
         return ("%02d:%02d:%02d" % (h, m, s))
     return ("%02d:%02d" % (m, s))
+
+
+def remove_temp_file(path, string):
+    for file in os.listdir(path):
+        if file.startswith(string):
+            os.remove(os.path.join(path, file))

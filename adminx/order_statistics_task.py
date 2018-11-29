@@ -1,4 +1,3 @@
-
 import django
 
 from adminx.helpers.piece import get_order_parm
@@ -11,14 +10,14 @@ from adminx.models import OrderStatisticDetail, OrderStatistic
 
 @app.task
 def order_statistics():
-    today, income, expect_income, paid_order, no_paid_order, expired_order, total_order = get_order_parm()
+    yesterday, income, expect_income, paid_order, no_paid_order, expired_order, total_order = get_order_parm()
     # 存入订单统计详情表中
-    OrderStatisticDetail(income=income, expect_income=expect_income, paid_order=paid_order,
+    OrderStatisticDetail(date=yesterday, income=income, expect_income=expect_income, paid_order=paid_order,
                          no_paid_order=no_paid_order, expired_order=expired_order, total_order=total_order).save()
     # 修改订单统计表简要表
     # if today.day == 1:
-    m = today.month
-    d = today.day
+    m = yesterday.month
+    d = yesterday.day
     l = [1, 4, 7, 10]
     # 如果日期为日期为1.1,4.1,7.1,10.1则name=3数据置0
     if m in l and d == 1:
@@ -54,5 +53,5 @@ def order_statistics():
 
 
 def delete_os(name):
-    OrderStatistic(name=name, no_paid_order=0, expired_order=0,
-                   total_order=0, income="0", paid_order=0).save()
+    OrderStatistic.filter(name=name).update(no_paid_order=0, expired_order=0,
+                                            total_order=0, income="0", paid_order=0)

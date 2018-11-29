@@ -17,8 +17,10 @@ import xadmin
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
+# from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
+    # url(r'^docs/', include_docs_urls(title="漫画项目接口文档")),
     # url(r'^admin/', admin.site.urls),
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^comics/', include('api.urls')),
@@ -27,6 +29,10 @@ urlpatterns = [
     url(r'^adminx/', include('adminx.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# handler404 = "api.views.page_not_found"
+# handler500 = "api.views.page_error"
+
 
 if settings.DEBUG:
     import debug_toolbar

@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-
-
 import djcelery
 from celery.schedules import crontab
 
@@ -26,7 +24,6 @@ SECRET_KEY = '2@l!1)$1%)z*-g#pu8o@^2i_t%x2d=j%@f8=ahx2t*xwjvlc-4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # todo
-
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
@@ -172,7 +169,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/img/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # debug-toolbar settings
@@ -183,6 +180,8 @@ DEBUG_TOOLBAR_CONFIG = {'JQUERY_URL': "http://code.jquery.com/jquery-2.1.1.min.j
 SDK_PATH = '/Users/grave/Desktop/work/comicsSDK'
 SDK_ENV_PATH = '/Users/grave/Desktop/venv'
 RESOURCES_PATH = '/Users/grave/Desktop/resource'
+MYSQL_DATA_PATH = '/usr/local/mysql/data'
+
 
 # rest-framework
 REST_FRAMEWORK = {
@@ -207,7 +206,7 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 djcelery.setup_loader()
 BROKER_URL = 'redis://127.0.0.1:6379/2'
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/3'
-CELERY_IMPORTS = ('userapi.sms_task', 'userapi.pay_task', 'api.redis_task')
+CELERY_IMPORTS = ('userapi.sms_task', 'userapi.pay_task', 'api.redis_task', 'adminx.order_statistics_task')
 CELERY_TIMEZONE = 'UTC'
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 

@@ -13,9 +13,15 @@ class MyPaginator(object):
         return self.paginator_class(items, list_per_page)
 
     def get_p_obj(self, cur_page):
-        obj = self.paginator.page(cur_page)
+        if cur_page:
+            obj = self.paginator.page(cur_page)
+        else:
+            obj = self.paginator.page(1)
         return obj
-    
+
+    def get_total_page(self):
+        return self.paginator.num_pages
+
     # 定义一个分页的函数
     def get_page_range(self, cur_page):
         # current_page: 表示当前页

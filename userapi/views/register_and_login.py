@@ -1,173 +1,197 @@
-import random
+import pickle
+import hashlib
+import time
 
 from django.conf import settings
-from redis_sessions.session import SessionStore
-from rest_framework.decorators import api_view
+from rest_framework import viewsets
 from rest_framework.response import Response
 
-from api.helpers.code import Code
-from api.helpers.serializer import ComicsSuccessSerializer
+from api.helpers import r1, EnumBase, MyViewBackend, set_attr
+from api.helpers.code import CodeEn
 from api.helpers.comic_method import ComicMethod
-from api.helpers import r1
-
-from userapi.models import User
-from userapi.pay_task import active_to_inactive
+from api.helpers.serializer import ComicsSuccessSerializer
 from userapi.sms_task import send_email
+from userapi.pay_task import logout
+from userapi.models import User
 
 
-@api_view(["POST"])
-def register_and_login(request):
+class UsersLogin(viewsets.ViewSet, MyViewBackend):
     """
-    用户注册与登录
-    接收 email PIN
+    define user login logout register interfaces
     """
-    # 验证表单是否合法
-    if request.method == 'POST':
-        email = request.data.get("email")
-        pin = request.data.get("PIN")
-        bind_id = request.data.get("bindID")
 
-        # 是否第三方登录
-        if bind_id:
-            # 验证此第三方id是否已有账号
-            u = User.filter(bind=bind_id)
-            if len(u) == 0:
-                if not email:
-                    data = {
-                        "status": Code.email_error.value,
-                        "msg": Code.email_error.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                if not (r1.get("%s_PIN" % email)) or (str(pin) != str(eval(r1.get("%s_PIN" % email)))):
-                    data = {
-                        "status": Code.captcha_not_match.value,
-                        "msg": Code.captcha_not_match.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                eu = User.filter(email=email)
-                if eu:
-                    if eu[0].bind:
-                        data = {
-                            "status": Code.this_email_has_been_bound.value,
-                            "msg": Code.this_email_has_been_bound.name.replace("_", " ").title(),
-                        }
-                        serializer = ComicsSuccessSerializer(data)
-                        return Response(serializer.data)
-                    eu[0].bind = bind_id
-                    eu[0].save()
-                # 不存在则注册
-                else:
-                    user = User(email=email, wallet_ios="10.00", wallet_android="10.00", bind=bind_id, active=1)
-                    user.save()
-            else:
-                email = u[0].email
-        # 非第三方登录
+    def get_qs(self, model, perm_dict):
+        """
+        :param model:
+        :param perm_dict: filter perms
+        :return: queryset obj
+        """
+        return model.filter(**perm_dict)
+
+    @set_attr
+    def post(self, request):
+        """
+        execute different function by the request key of behavior
+        behavior including send_code, login, and logout.
+        :param request:
+        :return: API data
+        """
+        if self.is_valid_lang():
+            data = self.login()
         else:
-            # 验证验证码
-            if not (r1.get("%s_PIN" % email)) or (str(pin) != str(eval(r1.get("%s_PIN" % email)))):
-                data = {
-                    "status": Code.captcha_not_match.value,
-                    "msg": Code.captcha_not_match.name.replace("_", " ").title(),
-                }
-                serializer = ComicsSuccessSerializer(data)
-                return Response(serializer.data)
-            # 判断email是否存在
-            u = User.filter(email=email)
-            if not u:
-                # 不存在则注册
-                user = User(email=email, wallet_ios="10.00", wallet_android="10.00", active=1)
+            data = EnumBase.get_status(642, CodeEn)  # 暂无此语言
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def _register(self, bind_id=None):
+        """
+        register
+        :return: success register return user object, else API data
+        """
+        lang = getattr(self, "lang", "ms")
+        if hasattr(self, "email") and hasattr(self, "pin"):
+            email = getattr(self, "email")
+            if not self.is_valid_pin():
+                data = EnumBase.get_status(638, CodeEn, lang)  # 该用户验证失败
+                return data
+            elif not self.is_exist_email(email):
+                return EnumBase.get_status(632, CodeEn, lang)  # 该用户已存在
+            else:
+                user = User(email=email, wallet_ios="5.00", wallet_android="5.00", bind=bind_id,
+                            active=1, accumulative_time=0)
                 user.save()
-        # 验证锁
-        if u and u[0].login_lock:
-            data = {
-                "status": Code.sign_in_failed.value,
-                "msg": Code.sign_in_failed.name.replace("_", " ").title(),
-            }
-            serializer = ComicsSuccessSerializer(data)
-            return Response(serializer.data)
-        # 登录
-        u[0].active = 1
-        u[0].save()
-        active_to_inactive.apply_async(args=(u[0],),
-                                       countdown=2 * 7 * 24 * 60 * 60)  # todo 活跃时间 2 * 7 * 24 * 60 * 60(两周)
-        sessionstore = SessionStore()
-        sessionstore[email] = email + settings.SECRET_KEY + str(random.randint(0, 10))
-        sessionstore.save()
-        if r1.get(email):
-            old_key = r1.get(email)
-            r1.delete(old_key)
-        r1.set(email, sessionstore.session_key)
-        data = ComicMethod.pack_success_data(email=email)
-        serializer = ComicsSuccessSerializer(data)
-        response = Response(serializer.data)
-        response.set_cookie(
-            settings.SESSION_COOKIE_NAME,
-            sessionstore.session_key,
-            domain=settings.SESSION_COOKIE_DOMAIN,
-            path=settings.SESSION_COOKIE_PATH,
-            secure=settings.SESSION_COOKIE_SECURE or None,
-            httponly=settings.SESSION_COOKIE_HTTPONLY or None,
-        )
-        return response
-    else:
-        data = {
-            "status": Code.sign_in_failed.value,
-            "msg": Code.sign_in_failed.name.replace("_", " ").title(),
-        }
+                return user
+        else:
+            data = EnumBase.get_status(639, CodeEn, lang)  # 该用户邮箱信息有误
+            return data
+
+    def has_login_lock(self, obj):
+        """
+        :param obj:
+        :return: have lock return API data, else user obj
+        """
+        # email = obj.email
+        # # redis取，没有mysql取
+        # redis_obj = r1.get(email)
+        lang = getattr(self, "lang", "ms")
+        #
+        # if redis_obj:
+        #     obj = pickle.loads(redis_obj)
+        if obj.login_lock == 1:
+            return EnumBase.get_status(637, CodeEn, lang)  # 该用户注册登录失败
+        return obj
+
+    def qs_has_obj(self, qs, bind_id=None):
+        """
+        :param queryset:
+        :return: success register or querset have obj return user obj, else API data
+        """
+        if not qs:
+            return self._register(bind_id)
+        else:
+            # 验证已有用户登录锁是否激活
+            data = self.has_login_lock(qs.first())
+            return data
+
+    def login(self):
+        """
+        execute login and register function
+        :return: API data
+        """
+        # 获取bind——id
+        # 有bind——id
+        lang = getattr(self, "lang", "ms")
+        if hasattr(self, "bind_id"):
+            bind_id = getattr(self, "bind_id")
+            # 根据bind——id 获取user对象，对象存在且则登录
+            qs = self.get_qs(User, {"bind": bind_id})
+            # 无user对象则 取email pin 注册
+            data = self.qs_has_obj(qs, bind_id)
+            if isinstance(data, dict):
+                return data
+            else:
+                user = data
+        # 无bind-id 取email pin 根据email取对象 存在则登录
+        else:
+            # if not self.is_valid_email():
+            #     print("LO")
+            #     return EnumBase.get_status(639, CodeEn, lang)  # 该用户邮箱信息有误
+
+            email = getattr(self, "email")
+
+            if not self.is_valid_pin():
+                data = EnumBase.get_status(638, CodeEn, lang)  # 该用户验证失败
+                return data
+            qs = self.get_qs(User, {"email": email})
+            # 无user对象则注册
+            data = self.qs_has_obj(qs)
+            if isinstance(data, dict):
+                return data
+            else:
+                user = data
+
+        # 登录操作
+        user.active = 1
+        user.save()
+        email = user.email
+        timestamp = "%.f" % time.time()
+        key = email + settings.SECRET_KEY + timestamp
+        # 生成token，email+key+time md5加密
+        token = hashlib.md5(key.encode("utf-8")).hexdigest()
+        #
+        # if not hasattr(user, "timestamp"):
+        #     user.timestamp = timestamp
+        # # 往user对象存token
+        # user.token = token
+        # # 把对象存进redis
+        # r1.setex(email, pickle.dumps(user), 2 * 7 * 25 * 60 * 60)  # 活跃时间 2 * 7 * 24 * 60 * 60(两周)
+        # logout.apply_async(args=(user.email,),
+        #                    countdown=2 * 7 * 24 * 60 * 60)  # todo 活跃时间 2 * 7 * 24 * 60 * 60(两周)
+        # todo
+        r1.setex(email, {"timestamp": timestamp, "token": token}, 2 * 7 * 25 * 60 * 60)
+        logout.apply_async(args=(email,), countdown=2 * 7 * 25 * 60 * 60)
+        return ComicMethod.pack_success_data(token=token, email=email)
+
+
+class UsersSendCode(viewsets.ViewSet, MyViewBackend):
+    @set_attr
+    def post(self, request):
+        if self.is_valid_lang():
+            data = self.send_code()
+        else:
+            data = EnumBase.get_status(642, CodeEn)  # 暂无此语言
         serializer = ComicsSuccessSerializer(data)
         return Response(serializer.data)
 
+    def send_code(self):
+        """
+        send pin code
+        :return: API data
+        """
+        email = getattr(self, "email")
+        template = getattr(self, "template")
+        lang = getattr(self, 'lang', "ms")
+        send_email.delay(email, template, lang)
+        return ComicMethod.pack_success_data()
 
-@api_view(["POST"])
-def logout(request):
-    """
-    用户注销
-    接收email
-    """
-    # 删除session
-    try:
-        email = str(request.data.get("email"))
-        u = User.get(email=email)
-        u.active = 0
-        u.save()
-        del request.session[email]
-        data = ComicMethod.pack_success_data()
-        serializer = ComicsSuccessSerializer(data)
-        return Response(serializer.data)
-    except:
-        data = {
-            "status": Code.unknown_error.value,
-            "msg": Code.unknown_error.name.replace("_", " ").title()
-        }
+
+class UsersLogout(viewsets.ViewSet, MyViewBackend):
+    @set_attr
+    def post(self, request):
+        data = self._pre_check()
+        if not isinstance(data, dict):
+            data = self.logout()
         serializer = ComicsSuccessSerializer(data)
         return Response(serializer.data)
 
-
-@api_view(["POST"])
-def send_code(request):
-    if request.method == 'POST':
-        email = request.data.get("email")
-        template = request.data.get("template")
-        send_email.delay(email, template)
-        data = ComicMethod.pack_success_data()
-        serializer = ComicsSuccessSerializer(data)
-        return Response(serializer.data)
-    else:
-        return Response(request.data)
-
-
-@api_view(["GET"])
-def check_session(request):
-    email = request.GET.get("email")
-    value = request.session.get(email)
-    if value:
-        data = ComicMethod.pack_success_data()
-    else:
-        data = {
-            "status": Code.you_are_offline_in_this_device.value,
-            "msg": Code.you_are_offline_in_this_device.name.replace("_", " ").title(),
-        }
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
+    def logout(self):
+        """
+        user logout
+        :return: API data
+        """
+        # email = getattr(self, "email")
+        # logout.delay(email)
+        # todo
+        email = getattr(self, "email")
+        logout.delay(email)
+        return ComicMethod.pack_success_data()

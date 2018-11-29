@@ -17,20 +17,18 @@ class Permission(models.Model, Model):
         from api.models import ImgResource
         i = ImgResource.get(com_id=self.com_id, chap_id=self.chap_id)
         return i.price
+
     show_chap_price.__name__ = "消费价格"
 
-    def show_comics_name(self):
+    def show_default_comics_name(self):
         from api.models import Search
-        s = Search.get(com_id=self.com_id)
-        return s.my_title
+        title = Search.get(com_id=self.com_id).en_title
+        return title if title else "空"
+    show_default_comics_name.__name__ = "漫画名"
 
-    show_comics_name.__name__ = "漫画名"
-
-    def show_chapter_name(self):
+    def show_default_chapter_name(self):
         from api.models import ImgResource
-        i = ImgResource.get(com_id=self.com_id,chap_id=self.chap_id)
-        return i.my_title
+        title = ImgResource.get(com_id=self.com_id, chap_id=self.chap_id).en_title
+        return title if title else "空"
 
-    show_chapter_name.__name__ = "漫画章节名"
-
-
+    show_default_chapter_name.__name__ = "漫画章节名"

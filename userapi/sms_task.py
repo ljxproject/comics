@@ -6,6 +6,7 @@ from django.conf import settings
 
 from api.helpers import r1
 from comic.celery import app
+from userapi.helpers.language import t_en, t_vi, t_ms
 
 """
 TEMPLLATES = {"001": u"<html><div>尊敬的XXX漫画用户:</div><br>" \
@@ -26,29 +27,22 @@ TEMPLLATES = {"001": u"<html><div>尊敬的XXX漫画用户:</div><br>" \
                      "</html>",
               }
 """
-TEMPLLATES = {"001": u"<html>" \
-                     "<div>Your Verification Code:</div>" \
-                     "<div style='text-align:center'><font size='10' color='#0066FF'>%s</font></div><br>" \
-                     "<div>This email address is being used to register %s. If you initiated this process, it is asking you to enter the numeric verification code that appears above within 2 minutes.</div><br>" \
-                     "<div>if you did not initiate an account register/log in process. It is possible that someone else is trying to use %s via your account. Do not forward or give this code to anyone.</div><br>" \
-                     "<div>Your sincerely</div>" \
-                     "<div>The Burger Clerk :) </div>"
-                     "</html>" % ("%s", settings.APP_TITLE, settings.APP_TITLE),
-              }
 
 sender = 'mangaburger@entermedia.cn'  # todo 更换邮箱
 subject = u'%s verification' % settings.APP_TITLE
 smtpserver = 'hwsmtp.exmail.qq.com'  # 163网易提供给用户的服务器
 username = 'mangaburger@entermedia.cn'  # todo 更换邮箱r
 password = 'Comicdingyu@906'  # todo 更换邮箱
-
+template_dict = {"t_vi": t_vi, "t_en": t_en, "t_ms": t_ms}
 
 @app.task  # todo 处理退还邮箱bind=True, default_retry_delay=20, max_retries=3
-def send_email(email, template):
+def send_email(email, template, lang):
     # time_begin = datetime.datetime.now()
-    PIN = str(random.randint(100000, 999999))
-    content = TEMPLLATES[template] % (PIN)
-    r1.setex("%s_PIN" % email, PIN, 60 * 5)
+    pin = str(random.randint(100000, 999999))
+    templates = template_dict["t_%s" % lang]
+
+    content = templates[template] % (pin, settings.APP_TITLE)
+    r1.setex("%s_PIN" % email, pin, 60 * 5)
     try:
         msg = MIMEText(content, 'html', 'utf-8')
         msg['Subject'] = subject

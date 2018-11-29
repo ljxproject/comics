@@ -1,426 +1,168 @@
-from django.core.paginator import Paginator
-from rest_framework.decorators import api_view
+from rest_framework import viewsets
 from rest_framework.response import Response
 
-from api.models import ComicInfo, ComicStatus, Search
-from api.helpers.code import Code
+from api.helpers import r, MyViewBackend, set_attr
+from api.helpers.myenum import EnumBase
+from api.helpers.code import CodeEn, CategoryEn
 from api.helpers.comic_method import ComicMethod
-from api.helpers import r
 from api.helpers.serializer import ComicsSuccessSerializer
+from api.models import Search, ComicInfo
 from userapi.models import PurchaseAndFavorite
+from api.views import ComicsListBaseView
 
 
-@api_view(["GET"])
-def get_edit_comics(request):
-    """
-    获取主编推荐列表
-    接收lang
-    """
-    # 判断漫画列表是否存在主编推荐
-    comic_list = ComicInfo.filter(category=1).order_by("-modified")
-    if not comic_list:
-        data = {
-            "status": Code.category_do_not_exist.value,
-            "msg": Code.category_do_not_exist.name.replace("_", " ").title(),
-        }
-    else:
-        lang = request.GET.get("lang") if request.GET.get("lang") else "en"
-        # 从redis 获取
-        edit_comic_list = r.get("comic_edit_%s" % lang)
-        if not edit_comic_list:
-            edit_comic_list = []
-            for i in comic_list:
-                com_id = i.com_id
-                cover_img = i.my_com_cover_img
-                status = {
-                    "code": i.status,
-                    "name": ComicStatus.get_name_from_value(i.status)
-                }
-                # 根据com_id 查检索表
-                search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
-                if isinstance(search_re, dict):
-                    title = search_re.get("title")
-                    author = search_re.get("author")
-                else:
-                    data = {
-                        "status": search_re.value,
-                        "msg": search_re.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                              "comicsCover": cover_img, "comicsStatus": status}
-                edit_comic_list.append(comic_dict)
-            r.setex("comic_edit_%s" % lang, edit_comic_list, 24 * 60 * 60)  # todo 过期时间 24*60*60(一天)
-        edit_comic_list = eval(edit_comic_list) if isinstance(edit_comic_list, bytes) else edit_comic_list
-        p = Paginator(edit_comic_list, 10)
-        page = request.GET.get("currentPage")
-        if page:
-            success_list = p.page(page)
-            current_page = int(page)
+class ComicsListViewSet(viewsets.ViewSet, ComicsListBaseView, MyViewBackend):
+
+    def get_model(self):
+        pass
+
+    @set_attr
+    def post(self, request):
+        if self.is_valid_lang():
+            lang = getattr(self, "lang", "ms")
+            page = getattr(self, "current_page", "1")
+            data = self.category_comics_handler(lang, page)
         else:
-            success_list = p.page(1)
-            current_page = 1
-        total_page = p.num_pages
-        data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                             total_page=total_page)
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
-
-
-@api_view(["GET"])
-def get_finish_comics(request):
-    """
-    获取完结推荐列表
-    接收lang
-    """
-    # 判断漫画列表是否存在主编推荐
-    comic_list = ComicInfo.filter(category=2).order_by("-modified")
-    if not comic_list:
-        data = {
-            "status": Code.category_do_not_exist.value,
-            "msg": Code.category_do_not_exist.name.replace("_", " ").title(),
-        }
-    else:
-        lang = request.GET.get("lang") if request.GET.get("lang") else "en"
-        # 从redis 获取
-        finish_comic_list = r.get("comic_finish_%s" % lang)
-        if not finish_comic_list:
-            finish_comic_list = []
-            for i in comic_list:
-                com_id = i.com_id
-                cover_img = i.my_com_cover_img
-                status = {
-                    "code": i.status,
-                    "name": ComicStatus.get_name_from_value(i.status)
-                }
-                # 根据com_id 查检索表
-                search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
-                if isinstance(search_re, dict):
-                    title = search_re.get("title")
-                    author = search_re.get("author")
-                else:
-                    data = {
-                        "status": search_re.value,
-                        "msg": search_re.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                              "comicsCover": cover_img, "comicsStatus": status}
-                finish_comic_list.append(comic_dict)
-            r.setex("comic_finish_%s" % lang, finish_comic_list, 24 * 60 * 60)
-        finish_comic_list = eval(finish_comic_list) if isinstance(finish_comic_list, bytes) else finish_comic_list
-        p = Paginator(finish_comic_list, 10)
-        page = request.GET.get("currentPage")
-        if page:
-            success_list = p.page(page)
-            current_page = int(page)
-        else:
-            success_list = p.page(1)
-            current_page = 1
-        total_page = p.num_pages
-        data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                             total_page=total_page)
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
-
-
-@api_view(["GET"])
-def get_trend_comics(request):
-    """
-    获取热门推荐列表
-    接收lang
-    """
-    # 判断漫画列表是否存在主编推荐
-    comic_list = ComicInfo.filter(category=3).order_by("-modified")
-    if not comic_list:
-        data = {
-            "status": Code.category_do_not_exist.value,
-            "msg": Code.category_do_not_exist.name.replace("_", " ").title(),
-        }
-    else:
-        lang = request.GET.get("lang") if request.GET.get("lang") else "en"
-        # 从redis 获取
-        trend_comic_list = r.get("comic_trend_%s" % lang)
-        if not trend_comic_list:
-            trend_comic_list = []
-            for i in comic_list:
-                com_id = i.com_id
-                cover_img = i.my_com_cover_img
-                status = {
-                    "code": i.status,
-                    "name": ComicStatus.get_name_from_value(i.status)
-                }
-                # 根据com_id 查检索表
-                search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
-                if isinstance(search_re, dict):
-                    title = search_re.get("title")
-                    author = search_re.get("author")
-                else:
-                    data = {
-                        "status": search_re.value,
-                        "msg": search_re.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                              "comicsCover": cover_img, "comicsStatus": status}
-                trend_comic_list.append(comic_dict)
-            r.setex("comic_trend_%s" % lang, trend_comic_list, 24 * 60 * 60)  # todo 过期时间 24*60*60(一天)
-        trend_comic_list = eval(trend_comic_list) if isinstance(trend_comic_list, bytes) else trend_comic_list
-        p = Paginator(trend_comic_list, 10)
-        page = request.GET.get("currentPage")
-        if page:
-            success_list = p.page(page)
-            current_page = int(page)
-        else:
-            success_list = p.page(1)
-            current_page = 1
-        total_page = p.num_pages
-        data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                             total_page=total_page)
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
-
-
-@api_view(["GET"])
-def get_manhua_comics(request):
-    """
-    获取中漫推荐列表
-    接收lang
-    """
-    # 判断漫画列表是否存在主编推荐
-    comic_list = ComicInfo.filter(category=10).order_by("-modified")
-    if not comic_list:
-        data = {
-            "status": Code.category_do_not_exist.value,
-            "msg": Code.category_do_not_exist.name.replace("_", " ").title(),
-        }
-    else:
-        lang = request.GET.get("lang") if request.GET.get("lang") else "en"
-        # 从redis 获取
-        manhua_comic_list = r.get("comic_manhua_%s" % lang)
-        if not manhua_comic_list:
-            manhua_comic_list = []
-            for i in comic_list:
-                com_id = i.com_id
-                cover_img = i.my_com_cover_img
-                status = {
-                    "code": i.status,
-                    "name": ComicStatus.get_name_from_value(i.status)
-                }
-                # 根据com_id 查检索表
-                search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
-                if isinstance(search_re, dict):
-                    title = search_re.get("title")
-                    author = search_re.get("author")
-                else:
-                    data = {
-                        "status": search_re.value,
-                        "msg": search_re.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                              "comicsCover": cover_img, "comicsStatus": status}
-                manhua_comic_list.append(comic_dict)
-            r.setex("comic_manhua_%s" % lang, manhua_comic_list, 24 * 60 * 60)  # todo 过期时间 24*60*60(一天)
-        manhua_comic_list = eval(manhua_comic_list) if isinstance(manhua_comic_list, bytes) else manhua_comic_list
-        p = Paginator(manhua_comic_list, 10)
-        page = request.GET.get("currentPage")
-        if page:
-            success_list = p.page(page)
-            current_page = int(page)
-        else:
-            success_list = p.page(1)
-            current_page = 1
-        total_page = p.num_pages
-        data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                             total_page=total_page)
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
-
-
-@api_view(["GET"])
-def get_manga_comics(request):
-    """
-    获取中漫推荐列表
-    接收lang
-    """
-    # 判断漫画列表是否存在主编推荐
-    comic_list = ComicInfo.filter(category=11).order_by("-modified")
-    if not comic_list:
-        data = {
-            "status": Code.category_do_not_exist.value,
-            "msg": Code.category_do_not_exist.name.replace("_", " ").title(),
-        }
-    else:
-        lang = request.GET.get("lang") if request.GET.get("lang") else "en"
-        # 从redis 获取
-        manga_comic_list = r.get("comic_manga_%s" % lang)
-        if not manga_comic_list:
-            manga_comic_list = []
-            for i in comic_list:
-                com_id = i.com_id
-                cover_img = i.my_com_cover_img
-                status = {
-                    "code": i.status,
-                    "name": ComicStatus.get_name_from_value(i.status)
-                }
-                # 根据com_id 查检索表
-                search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
-                if isinstance(search_re, dict):
-                    title = search_re.get("title")
-                    author = search_re.get("author")
-                else:
-                    data = {
-                        "status": search_re.value,
-                        "msg": search_re.name.replace("_", " ").title(),
-                    }
-                    serializer = ComicsSuccessSerializer(data)
-                    return Response(serializer.data)
-                comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                              "comicsCover": cover_img, "comicsStatus": status}
-                manga_comic_list.append(comic_dict)
-            r.setex("comic_manga_%s" % lang, manga_comic_list, 24 * 60 * 60)  # todo 过期时间 24*60*60(一天)
-        manga_comic_list = eval(manga_comic_list) if isinstance(manga_comic_list, bytes) else manga_comic_list
-        p = Paginator(manga_comic_list, 10)
-        page = request.GET.get("currentPage")
-        if page:
-            success_list = p.page(page)
-            current_page = int(page)
-        else:
-            success_list = p.page(1)
-            current_page = 1
-        total_page = p.num_pages
-        data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                             total_page=total_page)
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
-
-
-@api_view(["GET"])
-def get_own_purchase_comics(request):
-    """
-    获取用户购买列表
-    接收email lang
-    """
-    email = request.GET.get("email")
-    lang = request.GET.get("lang") if request.GET.get("lang") else "my"
-    own_purchase_list = []
-    # 从redis中获取用户购买列表
-    comic_list = list(PurchaseAndFavorite.filter(email=email, status=0).values_list("com_id", flat=True))
-    if not comic_list:
-        data = {
-            "status": Code.it_seems_you_have_not_any_purchased_comics_yet.value,
-            "msg": Code.it_seems_you_have_not_any_purchased_comics_yet.name.replace("_", " ").title()
-        }
+            data = EnumBase.get_status(642, CodeEn)  # 暂无此语言
         serializer = ComicsSuccessSerializer(data)
         return Response(serializer.data)
-    for i in comic_list:
-        com_id = i
-        cover_img = ComicInfo.get(com_id=com_id).my_com_cover_img
-        status = {
-            "code": ComicInfo.get(com_id=com_id).status,
-            "name": ComicStatus.get_name_from_value(ComicInfo.get(com_id=com_id).status)
-        }
-        search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
-        if isinstance(search_re, dict):
-            title = search_re.get("title")
-            author = search_re.get("author")
-        else:
-            continue
-        comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                      "comicsCover": cover_img, "comicsStatus": status}
-        own_purchase_list.append(comic_dict)
-    # 对结果进行分页
-    p = Paginator(own_purchase_list, 15)
-    page = request.GET.get("currentPage")
-    if page:
-        success_list = p.page(page)
-        current_page = int(page)
-    else:
-        success_list = p.page(1)
-        current_page = 1
-    total_page = p.num_pages
-    data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                         total_page=total_page)
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
 
-
-@api_view(["GET"])
-def get_own_favorite_comics(request):
-    pass
-
-
-@api_view(["GET"])
-def get_search_comics(request):
-    """
-    获取收索列表
-    接收 q lang page
-    """
-    # 判断q是否存在
-    q = request.GET.get("q")
-    lang = request.GET.get("lang")
-    # 不存在则返回热搜榜
-    if not q:
-        re = r.zrange("hot_search", -7, -1, withscores=True)
-        if re:
-            if not lang or lang == "my":
-                success_list = []
-                for i in re:
-                    com_id = eval(i[0])
-                    title = Search.get(com_id=com_id).my_title.title()
-                    success_list.append(title)
-                data = ComicMethod.pack_success_data(success_list=success_list)
-        else:
-            data = ComicMethod.pack_success_data(success_list=re)
-    # 判断lang是否存在,不存在返回无该语言漫画错误
-    else:
-        if not lang or lang == "my":
-            # 存在,则根据lang查search表
-            search_list = Search.filter(my_title__icontains=q)
-            if not search_list:
-                data = {
-                    "status": Code.comics_not_found.value,
-                    "msg": Code.comics_not_found.name.replace("_", " ").title(),
-                }
-                serializer = ComicsSuccessSerializer(data)
-                return Response(serializer.data)
-            comics_list = []
-            for i in search_list:
-                com_id = i.com_id
-                title = i.my_title
-                author = i.my_author
-                cover_img = ComicInfo.get(com_id=com_id).my_com_cover_img
-                status = {
-                    "code": ComicInfo.get(com_id=com_id).status,
-                    "name": ComicStatus.get_name_from_value(ComicInfo.get(com_id=com_id).status)
-                }
-                comic_dict = {"comicsID": com_id, "comicsTitle": title, "comicsAuthor": author,
-                              "comicsCover": cover_img, "comicsStatus": status}
-                comics_list.append(comic_dict)
-            # 在redis热搜榜添加第一个comic
-            hot_comics = comics_list[0]["comicsID"]
-            r.zincrby("hot_search", hot_comics, 1)
-            # 对结果进行分页
-            p = Paginator(comics_list, 10)
-            page = request.GET.get("currentPage")
-            if page:
-                success_list = p.page(page)
-                current_page = int(page)
+    def category_comics_handler(self, lang, page):
+        if not hasattr(self, "category"):
+            return EnumBase.get_status(622, CodeEn, lang)  # 暂无此类漫画
+        category_id = int(getattr(self, "category"))
+        category_name = CategoryEn.get_name_from_value(category_id).split("_")[0]
+        comic_list = self.get_queryset(ComicInfo, {"category": category_id})
+        if not comic_list:
+            return EnumBase.get_status(622, CodeEn, lang)  # 暂无此类漫画
+        redis_key = "comic_%s_%s" % (category_name, lang)
+        result_comic_list = self.get_redis_context(redis_key)
+        if not result_comic_list:
+            mysql_re = self.get_mysql_context(comic_list, lang, is_pass_error=True)
+            if isinstance(mysql_re, list):
+                r.setex(redis_key, mysql_re, 24 * 60 * 60)  # todo 过期时间 24*60*60(一天)
+                result_comic_list = mysql_re
             else:
-                success_list = p.page(1)
-                current_page = 1
-            total_page = p.num_pages
-            data = ComicMethod.pack_success_data(success_list=list(success_list), current_page=current_page,
-                                                 total_page=total_page)
+                return mysql_re
+        obj, current_page, total_page = self.comics_list_paginator(result_comic_list, page)
+        return ComicMethod.pack_success_data(success_list=list(obj), current_page=current_page,
+                                             total_page=total_page)
+
+
+class OwnPurchaseListViewSet(viewsets.ViewSet, MyViewBackend, ComicsListBaseView):
+    @set_attr
+    def post(self, request):
+        data = self._pre_check()
+        if not isinstance(data, dict):
+            lang = getattr(self, "lang", "ms")
+            page = getattr(self, "current_page", "1")
+            email = getattr(self, "email")
+            data = self.own_purchase_comics(email, lang, page)
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def own_purchase_comics(self, email, lang, page):
+        purchase_list = self.get_queryset(PurchaseAndFavorite, {"email": email, "status": 0}, perm_type="and")
+        if not purchase_list:
+            return EnumBase.get_status(631, CodeEn, lang)  # 该用户未购任何漫画
+        comic_list = self.result_list_to_comic_list(purchase_list)
+        result_comic_list = self.get_mysql_context(comic_list, lang, is_pass_error=True)
+        obj, current_page, total_page = self.comics_list_paginator(result_comic_list, page)
+        return ComicMethod.pack_success_data(success_list=list(obj), current_page=current_page,
+                                             total_page=total_page)
+
+
+class OwnCollectListViewSet(viewsets.ViewSet, MyViewBackend, ComicsListBaseView):
+    @set_attr
+    def post(self, request):
+
+        data = self._pre_check()
+        if not isinstance(data, dict):
+            lang = getattr(self, "lang", "ms")
+            page = getattr(self, "current_page", "1")
+            email = getattr(self, "email")
+            data = self.own_collect_comics(email, lang, page)
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def own_collect_comics(self, email, lang, page):
+        favourite_list = self.get_queryset(PurchaseAndFavorite, {"email": email, "status": 1}, perm_type="and")
+        if not favourite_list:
+            # return EnumBase.get_status(631, CodeEn, lang)  # 该用户未购任何漫画
+            favourite_list = []
+        comic_list = self.result_list_to_comic_list(favourite_list)
+        result_comic_list = self.get_mysql_context(comic_list, lang, is_pass_error=True)
+        obj, current_page, total_page = self.comics_list_paginator(result_comic_list, page)
+        return ComicMethod.pack_success_data(success_list=list(obj), current_page=current_page,
+                                             total_page=total_page)
+
+
+class OwnCollectPostViewSet(viewsets.ViewSet, MyViewBackend):
+    @set_attr
+    def post(self, request):
+        data = self._pre_check()
+        if not isinstance(data, dict):
+            data = self.update_own_collect()
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def update_own_collect(self):
+        email = getattr(self, "email")
+        com_id = getattr(self, "comics_id")
+        lang = getattr(self, "lang", "ms")
+        base_obj = PurchaseAndFavorite.objects.filter(email=email)
+        exit_com_list = base_obj.filter(status=1).values_list("com_id", flat=True)
+        if int(com_id) in exit_com_list:
+            base_obj.filter(com_id=com_id, status=1).update(status=2)
+            return EnumBase.get_status(602, CodeEn, lang)
+        elif base_obj.filter(status=2, com_id=com_id):
+            base_obj.filter(status=2, com_id=com_id).update(status=1)
         else:
-            data = {
-                "status": Code.this_comics_has_not_localization.value,
-                "msg": Code.this_comics_has_not_localization.name.replace("_", " ").title(),
-            }
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
+            PurchaseAndFavorite.objects.create(com_id=com_id, email=email, status=1)
+        return EnumBase.get_status(601, CodeEn, lang)
+            # return ComicMethod.pack_success_data()
+
+
+class SearchListViewSet(viewsets.ViewSet, MyViewBackend, ComicsListBaseView):
+    @set_attr
+    def post(self, request):
+        if self.is_valid_lang():
+            q = getattr(self, "q", None)
+            lang = getattr(self, "lang", "ms")
+            page = getattr(self, "current_page", "1")
+            data = self.search_comics_handler(q, lang, page)
+        else:
+            data = EnumBase.get_status(642, CodeEn)  # 暂无此语言
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def search_comics_handler(self, q, lang, page):
+        t = "%s_title" % lang
+        if not q:
+            result_hot_search_list = self.get_redis_context("hot_search", is_solidset=True)
+            if result_hot_search_list:
+                success_list = []
+                for i in result_hot_search_list:
+                    com_id = eval(i[0])
+                    search_re = ComicMethod.get_comic_base_info(lang=lang, com_id=com_id)
+                    if isinstance(search_re, dict):
+                        title = search_re.get("title").title()
+                    else:
+                        continue
+                    success_list.append(title)
+                    if len(success_list) >= 6:
+                        break
+                return ComicMethod.pack_success_data(success_list=success_list)
+            else:
+                return ComicMethod.pack_success_data(success_list=[])
+        else:
+            search_list = self.get_queryset(Search, {"%s__icontains" % t: q})
+            if not search_list:
+                return EnumBase.get_status(620, CodeEn, lang)  # 暂无此漫画
+            comic_list = self.result_list_to_comic_list(search_list)
+            result_comic_list = self.get_mysql_context(comic_list, lang, is_pass_error=True)
+            hot_comics = result_comic_list[0]["comicsID"]
+            r.zincrby("hot_search", hot_comics, 1)
+            obj, current_page, total_page = self.comics_list_paginator(result_comic_list, page)
+            return ComicMethod.pack_success_data(success_list=list(obj), current_page=current_page,
+                                                 total_page=total_page)

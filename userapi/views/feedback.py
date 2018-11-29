@@ -9,54 +9,55 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 
+from api.helpers import EnumBase, MyViewBackend, set_attr
+from api.helpers.code import CodeEn
 from api.helpers.comic_method import ComicMethod
 from api.helpers.serializer import FeedBackDetailSerializer, ComicsSuccessSerializer, FeedBackAwardSerializer
 from userapi.models import FeedBack, FeedBackDetail
 
 
-class FeedBackDetailClientViewSet(viewsets.ModelViewSet, mixins.CreateModelMixin):
-    serializer_class = FeedBackDetailSerializer
-    renderer_classes = (TemplateHTMLRenderer,)
-    template_name = 'feedback/client.html'
-
-    def retrieve(self, request, *args, **kwargs):
-        form = self.serializer_class({"email": request.GET.get("email"),
-                                      "title": "", "content": "", "system": ""},
-                                     )
-        return Response({"serializer": form})
-
-    def update(self, request, *args, **kwargs):
-        form = self.serializer_class(data=request.data)
-        if form.is_valid():
-            title = form.validated_data.get("title")
-            email = form.validated_data.get("email")
-            system = form.validated_data.get("system")
-            content = form.validated_data.get("content")
-            pictures = request.FILES.getlist('picture')
-            # 生成目录
-            target_path = os.path.join(settings.MEDIA_ROOT, "uploads/feedback/%s_%s_%s" %
-                                       (email, title, timezone.now().date().strftime("%Y-%m-%d").replace("-", '')))
-            if not os.path.exists(target_path):
-                os.mkdir(target_path)
-            # 处理图片
-            if pictures:
-                for k, v in enumerate(pictures):
-                    p_name = v.name
-                    img = Image.open(v)
-                    img.thumbnail((300, 300))
-                    suffix = os.path.splitext(p_name)[1]
-                    filename = "%s_%s_%d" % (email, title, k) + suffix
-                    pathname = os.path.join(target_path, filename)
-                    img.save(pathname)
-            p_path = "%s_%s_%s" % (email, title, timezone.now().date().strftime("%Y-%m-%d").replace("-", ''))
-            fbd = FeedBackDetail(title=title, email=email, system=system,
-                                 content=content, picture=p_path)
-            fbd.save()
-            FeedBack(email=email, fbd_id=fbd.id).save()
-            r = reverse("userapi:fbdr")
-            return redirect(r)
+class FeedBackDetailClientViewSet(viewsets.ViewSet, MyViewBackend):
+    @set_attr
+    def post(self, request):
+        if self.is_valid_lang():
+            data = self.feed_back_client()
         else:
-            return Response({"serializer": form})
+            data = EnumBase.get_status(642, CodeEn)  # 暂无此语言
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def feed_back_client(self):
+        # form = self.serializer_class(data=request.data)
+        # if form.is_valid():
+        title = getattr(self, "title") if hasattr(self, "title") else None
+        email = getattr(self, "email") if hasattr(self, "email") else None
+        system = getattr(self, "system") if hasattr(self, "system") else None
+        content = getattr(self, "content") if hasattr(self, "content") else None
+        pictures = getattr(self, "pictures") if hasattr(self, "pictures") else None
+        p_path = "%s_%s_%s" % (email, title, timezone.now().strftime("%Y%m%d%H%M%S"))
+
+        # 生成目录
+        target_path = os.path.join(settings.MEDIA_ROOT, "uploads/feedback/%s" % p_path)
+        if not os.path.exists(target_path):
+            os.mkdir(target_path)
+        # 处理图片
+        if pictures:
+            for k, v in enumerate(pictures):
+                p_name = v.name
+                img = Image.open(v)
+                img.thumbnail((300, 300))
+                suffix = os.path.splitext(p_name)[1]
+                filename = "%s_%s_%d" % (email, title, k) + suffix
+                pathname = os.path.join(target_path, filename)
+                img.save(pathname)
+        fbd = FeedBackDetail(title=title, system=system,
+                             content=content, picture=p_path)
+        fbd.save()
+        FeedBack(email=email, fbd_id=fbd.id).save()
+        # r = reverse("userapi:fbdr")
+        data = ComicMethod.pack_success_data()
+
+        return data
 
 
 @api_view(["GET"])

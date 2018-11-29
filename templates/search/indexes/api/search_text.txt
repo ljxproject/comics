@@ -1,1 +1,3 @@
-{{ object.my_title }}
+{{ object.en_title }}
+{{ object.vi_title }}
+{{ object.ms_title }}

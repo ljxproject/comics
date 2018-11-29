@@ -1,5 +1,8 @@
 {% extends  'xadmin/base_site.html' %}
 {% load i18n static %}
+
+{% block  extrahead %}
+{% endblock %}
 {% block nav_title %}
     <i class="{{ icon }}"></i> {{ title }}
 {% endblock %}
@@ -18,18 +21,11 @@
         </div>
     </div>
     <div class="results table-responsive content-bodydb " style="width: 70% ;margin: 0 auto;">
-        <form class="form" action="{{ request.get_full_path }}" method="post" enctype="multipart/form-data">
+        <form class="form" action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
                 {{ field.label_tag }}
                 {{ field }}
-                {% if field.errors %}
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <strong>WARNING: {{ field.errors }}</strong>
-                    </div>
-                {% endif %}
                 {% if field.help_text %}
                     <p class="help text-small text-muted">{{ field.help_text|safe }}</p>
                 {% endif %}
@@ -38,16 +34,19 @@
             <br>
             <div style="margin-left: 233px">
                 <button style="width: 500px" type="submit" class="btn btn-success btn-lg" id="submit"
-                        onclick="progress()">
+                >
                     上传
                 </button>
 
             </div>
         </form>
-
     </div>
-    <script src="{% static 'progress/js/progress_bar.js' %}"></script>
 
+{% endblock %}
+{% block extrabody %}
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/webuploader/0.1.1/webuploader.js"></script>
+    <script src="{% static 'progress/js/progress_bar.js' %}"></script>
 {% endblock %}
 
 

@@ -21,7 +21,6 @@ class FeedBack(models.Model, Model):
 
 
 class FeedBackDetail(models.Model, Model):
-    email = models.CharField(max_length=64, null=False, verbose_name="用户邮箱")
     title = models.CharField(max_length=100, verbose_name="意见主题")
     system = models.CharField(blank=True, null=True, max_length=16, verbose_name='操作系统')
     content = models.TextField(verbose_name="意见内容")

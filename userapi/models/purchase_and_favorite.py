@@ -7,6 +7,7 @@ class PurchaseAndFavorite(models.Model, Model):
     PurchaseAndFavoriteStatus_CHOICES = (
         (0, u'购买'),
         (1, u'收藏'),
+        (2, u'取消收藏'),
     )
     email = models.CharField(max_length=64, null=False, verbose_name="用户邮箱")
     com_id = models.IntegerField(null=False, verbose_name="漫画ID")
@@ -16,10 +17,10 @@ class PurchaseAndFavorite(models.Model, Model):
         verbose_name_plural = "用户购买与收藏漫画"
         app_label = "userapi"
 
-
-    def show_comics_name(self):
+    def show_default_comics_name(self):
         from api.models import Search
-        s = Search.get(com_id=self.com_id)
-        return s.my_title
+        title = Search.get(com_id=self.com_id).en_title
+        return title if title else "空"
 
-    show_comics_name.__name__ = "漫画名"
+
+    show_default_comics_name.__name__ = "漫画名"

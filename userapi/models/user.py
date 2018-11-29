@@ -5,8 +5,8 @@ from api.models.self_model import Model
 
 class User(models.Model, Model):
     GENDER_CHOICES = (
-        (0, u'Male'),
-        (1, u'Female'),)
+        (0, u'男'),
+        (1, u'女'),)
     SYSTEM_CHOICES = (
         (0, u'ios'),
         (1, u'android'),
@@ -22,7 +22,12 @@ class User(models.Model, Model):
     login_lock = models.BooleanField(default=False, verbose_name="登录锁")
     bind = models.CharField(max_length=100, blank=True, null=True, verbose_name="第三方绑定ID")
     active = models.BooleanField(default=0, verbose_name="是否在线")
+    accumulative_time = models.IntegerField(default=0, verbose_name="累计登录时长（小时）")
 
     class Meta:
         verbose_name_plural = "用户"
         app_label = "userapi"
+
+    def show_accumulative_time(self):
+        return "%.2f" % (self.accumulative_time / 3600)
+    show_accumulative_time.__name__ = "累计登录时长（小时）"

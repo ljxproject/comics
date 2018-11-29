@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
+# import django
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "comic.base")  # project_name 项目名称
+#
+# django.setup()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import re
 from datetime import timedelta
@@ -47,7 +51,7 @@ INSTALLED_APPS = [
     'djcelery',
     'xadmin',
     'crispy_forms',
-    'gunicorn',
+    # 'gunicorn',
     'adminx',
     'DjangoUeditor',
     # 'guardian',
@@ -116,7 +120,6 @@ DATABASES = {
     }
 }
 # backup
-BACKUP_FILE = '/home/ljx/opt/mysql-backup'
 # DATABASE_ROUTERS = ['comic.database_router.DatabaseRouter']
 # DATABASE_APPS_MAPPING = {
 #     "tables": "data_backup"
@@ -173,7 +176,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/img/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # debug-toolbar settings
@@ -183,7 +186,9 @@ DEBUG_TOOLBAR_CONFIG = {'JQUERY_URL': "http://code.jquery.com/jquery-2.1.1.min.j
 # mangaupload
 SDK_PATH = '/home/ljx/opt/project/comics/comicsSDK'
 SDK_ENV_PATH = '/home/ljx/opt/env'
-RESOURCES_PATH = '/home/ljx/opt/resource'
+RESOURCES_PATH = '/home/ljx/opt/resource/comics'
+MYSQL_DATA_PATH = '/var/lib/mysql'
+BACKUP_FILE = '/home/ljx/opt/mysql-backup'
 
 # rest-framework
 REST_FRAMEWORK = {

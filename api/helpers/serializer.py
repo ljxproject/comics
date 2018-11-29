@@ -55,7 +55,6 @@ class CreateOderSerializer(serializers.Serializer):
 class UsersAvaterSerializer(serializers.Serializer):
     avatar = serializers.ImageField()
     email = serializers.CharField(max_length=64)
-
     # class Meta:
     #     model = User
     #     fields = ("avatar", "email")

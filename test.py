@@ -13,15 +13,19 @@ import django
 # from comic import settings
 from django.http import HttpResponse
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "comic.settings")  # project_name 项目名称
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "comic.dev_settings")  # project_name 项目名称
 # #
 django.setup()
 
-# import datetime
-import sys
-from datetime import datetime
-import shutil
+import json
+import urllib3
 
-import uuid
-a = str(uuid.uuid4()).split("-")[1]
-print(a)
+para = {"lang": "vi"}
+url = "127.0.0.1:8000/comics/index-test/"
+http = urllib3.PoolManager()
+data = json.dumps(para).encode("utf-8")
+r = http.request("POST", url, body=data, headers={"Content-Type": "application/json"})
+
+print(r)
+print(r.data)
+print(r.status)

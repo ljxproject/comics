@@ -1,22 +1,24 @@
 from django.conf.urls import url
-from api.views import get_comics_info, get_index, get_edit_comics,\
-    get_trend_comics, get_own_purchase_comics, get_finish_comics,\
-    get_own_favorite_comics, get_comics_detail, get_search_comics,\
-    PurchaseChapterViewSet, get_fuzzy_search_comics, get_manga_comics, \
-    get_manhua_comics
+from api.views import ComicInfoViewSet, get_comics_detail, \
+    PurchaseChapterViewSet, get_fuzzy_search_comics, ComicsListViewSet, OwnPurchaseListViewSet, SearchListViewSet, \
+    ChapterInfoViewSet, IndexComicsListViewSet, OwnCollectPostViewSet, OwnCollectListViewSet, get_index
 
 urlpatterns = [
-    url(r'^(?P<com_id>\d+)/$', get_comics_info, name='get_comics_info'),
-    url(r'^(?i)editor-recommend/$', get_edit_comics, name='get_edit_comics'),
-    url(r'^(?i)finish-recommend/$', get_finish_comics, name='get_finish_comics'),
-    url(r'^(?i)trend-recommend/$', get_trend_comics, name='get_trend_comics'),
-    url(r'^(?i)manga/$', get_manga_comics, name='get_manga_comics'),
-    url(r'^(?i)manhua/$', get_manhua_comics, name='get_finish_comics'),
-    url(r'^(?i)own-pur-coms/$', get_own_purchase_comics, name='get_own_comics'),
-    url(r'^(?i)search/$', get_search_comics, name='get_search_comic'),
+    url(r'^comic-information/$', ComicInfoViewSet.as_view({'post': 'post'}), name='get_comics_info'),
+    url(r'^chapter-information/$', ChapterInfoViewSet.as_view({'post': 'post'}), name='get_chapters_info'),
+    url(r'^comics-list/$', ComicsListViewSet.as_view({'post': 'post'}), name='get_edit_comics'),
+    # url(r'^(?i)finish-recommend/$', ComicsListViewSet.as_view({'post': 'list'}), name='get_finish_comics'),
+    # url(r'^(?i)trend-recommend/$', ComicsListViewSet.as_view({'post': 'list'}), name='get_trend_comics'),
+    # url(r'^(?i)manga/$', ComicsListViewSet.as_view({'post': 'list'}), name='get_manga_comics'),
+    # url(r'^(?i)manhua/$', ComicsListViewSet.as_view({'post': 'list'}), name='get_manhua_comics'),
+    url(r'^(?i)own-pur-coms/$', OwnPurchaseListViewSet.as_view({'post': 'post'}), name='get_own_comics'),
+    url(r'^(?i)own-coll-coms/$', OwnCollectPostViewSet.as_view({'post': 'post'}), name='get_own_comics'),
+    url(r'^(?i)own-coll-coms-list/$', OwnCollectListViewSet.as_view({'post': 'post'}), name='get_own_comics'),
+    url(r'^(?i)search/$', SearchListViewSet.as_view({'post': 'post'}), name='get_search_comic'),
     # url(r'^own-fav-coms/$', get_own_favorite_comics, name='get_own_comics'),
-    url(r'^(?i)pur-chaps/$', PurchaseChapterViewSet.as_view({'post': 'update', 'get': 'retrieve'})),
-    url(r'^(?P<com_id>\d+)/(?P<chap_id>\d+)/$', get_comics_detail, name='get_comics_detail'),
+    url(r'^(?i)purchase-chapter/$', PurchaseChapterViewSet.as_view({'post': 'post'})),
     url(r'^(?i)fuzzy-search/$', get_fuzzy_search_comics),
-    url(r'^$', get_index, name="get_index")
+    url(r'^index-test/$', IndexComicsListViewSet.as_view({'post': 'post'}), name="get_index"),
+    url(r'^index/$', get_index, name="get_index"),
+    url(r'^comic-content/$', get_comics_detail, name='get_comics_detail'),
 ]

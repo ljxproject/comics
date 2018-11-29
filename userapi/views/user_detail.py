@@ -1,39 +1,43 @@
-from rest_framework.decorators import api_view
+from rest_framework import viewsets
 from rest_framework.response import Response
 
+from api.helpers import set_attr, MyViewBackend
 from api.helpers.comic_method import ComicMethod
 from api.helpers.serializer import ComicsSuccessSerializer
-from userapi.models import User, PurchaseAndFavorite
+from userapi.models import PurchaseAndFavorite
 
 
-@api_view(["GET"])
-def user_detail(request, email):
-    """
-    用户详细信息
-    接收email
-    """
-    # 登录后查询用户信息表
-    user = User.get(email=email)
-    name = user.name
-    if user.avatar:
-        avatar = str(user.avatar)
-    else:
-        avatar = ''
-    if user.gender == None:
-        gender = ''
-    else:
-        gender = user.gender
-    if user.wallet_ios or user.wallet_android:
-        system = request.GET.get("system")
-        if system == "ios":
-            wallet = user.wallet_ios
-        elif system == "android":
-            wallet = user.wallet_android
-    else:
-        wallet = ''
-    purchased_amount = PurchaseAndFavorite.filter(email=email, status=1).count()
-    data = ComicMethod.pack_user_data(name=name, avatar=avatar, wallet=wallet,
-                                      gender=str(gender), purchased_amount=str(purchased_amount))
+class UserDetail(viewsets.ViewSet, MyViewBackend):
 
-    serializer = ComicsSuccessSerializer(data)
-    return Response(serializer.data)
+    @set_attr
+    def post(self, request):
+        if hasattr(self, "email"):
+            data = self._pre_check()
+            if not isinstance(data, dict):
+                data = self.get_user_detail(user=data)
+        else:
+            data = self.get_user_detail()
+        serializer = ComicsSuccessSerializer(data)
+        return Response(serializer.data)
+
+    def get_user_detail(self, user=None):
+        if user:
+            system = getattr(self, "app_key")
+            email = user.email
+            name = user.name
+            avatar = str(user.avatar)
+            if system == "ios":
+                wallet = user.wallet_ios
+            else:
+                wallet = user.wallet_android
+            gender = user.gender
+            purchased_amount = PurchaseAndFavorite.filter(email=email, status=1).count()
+        else:
+            name = ''
+            avatar = ''
+            gender = ''
+            wallet = ''
+            purchased_amount = 0
+        data = ComicMethod.pack_success_data(user_name=name, user_avatar=avatar, user_wallet=wallet,
+                                             user_gender=str(gender), purchased_amount=str(purchased_amount))
+        return data

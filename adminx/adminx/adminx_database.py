@@ -3,7 +3,6 @@ import datetime
 import markdown as markdown
 from django.contrib import messages
 from django.contrib.auth import get_permission_codename
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils import formats, timezone
 
@@ -116,6 +115,7 @@ class DataBackupAdminView(views.CommAdminView):
         else:
             re = backup.backup(backup_type)
         context = super(DataBackupAdminView, self).get_context()
+
         if isinstance(re, Exception):
             messages.error(request, re)
             context.update({"messages": messages})
@@ -139,3 +139,6 @@ class DataBackupAdmin(object):
     list_display = ["id", "name", "size", "backup_type", "backup_file", "comment", "created", "modified", "base"]
     list_filter = ["id", "name", "backup_type", "created", "modified", "base"]
     list_per_page = 20
+
+
+

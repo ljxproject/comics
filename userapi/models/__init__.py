@@ -3,3 +3,4 @@ from userapi.models.user import User
 from userapi.models.transaction import Transaction
 from userapi.models.feedback import FeedBack, FeedBackDetail
 from userapi.models.permission import Permission
+from userapi.models.comment import Comment

@@ -2,8 +2,695 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="049e4163-9465-4948-a3f2-18bba1c1f10e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/翻译.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8b47e73a-14a1-499e-80b6-53264b18b5f9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8b47e73a-14a1-499e-80b6-53264b18b5f9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/adminx/adminx_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/adminx/adminx_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/adminx/adminx_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/adminx/adminx_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/helpers/backup_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/backup_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/helpers/paginator.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/paginator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/helpers/piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/models/statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/models/statistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/order_statistics_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/order_statistics_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/static/progress/js/progress_bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/static/progress/js/progress_bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/views/check_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/views/resource_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/helpers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/helpers/code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/helpers/comic_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/comic_method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/helpers/fuzzy_search_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/fuzzy_search_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/helpers/img_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/img_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/helpers/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/comic_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/comic_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/img_resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/img_resource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/search.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/redis_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/redis_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/comics_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/comics_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/comics_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/comics_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/comics_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/comics_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/fuzzy_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/fuzzy_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/purchase_chapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/purchase_chapter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comic/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comic/dev_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/dev_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comic/pro_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/pro_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comic/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/dev_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/change_form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/css/toolbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/back_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/close_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/djdt_vertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/img/indicator.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/jquery_existing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/jquery_post.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/jquery_pre.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/toolbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/toolbar.profiling.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/toolbar.sql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/toolbar.template.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/debug_toolbar/js/toolbar.timer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/djcelery/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback/css/feedback.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/feedback/js/feedback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/progress/js/progress_bar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap-tweaks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/font-awesome-4.0.3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/css/highlight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/css/jquery.json-view.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/img/grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/js/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/js/highlight.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/js/jquery.json-view.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/img/glyphicons-halflings-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/img/glyphicons-halflings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/img/grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/ajax-form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/coreapi-0.1.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/csrf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/prettify-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/UEditorSnapscreen.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/addCustomizeButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/addCustomizeCombox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/addCustomizeDialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/completeDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/customPluginDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/customToolbarDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/customizeDialogPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/customizeToolbarUIDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/editor_api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/filterRuleDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/highlightDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/jqueryCompleteDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/jqueryValidation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/multiDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/multiEditorWithOneInstance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/renderInTable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/resetDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/sectiondemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/server/getContent.ashx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/server/getContent.asp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/server/getContent.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/server/getContent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/setWidthHeightDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/simpleDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/sortableDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/submitFormDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/textareaDemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/_examples/uparsedemo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/anchor/anchor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/attachment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/attachment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/attachment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/alignicon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/alignicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/file-icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/file-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/attachment/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/background/background.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/background/background.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/background/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/background/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/background/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/chart.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/charts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/images/charts0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/images/charts1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/images/charts2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/images/charts3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/images/charts4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/charts/images/charts5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/emotion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/emotion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/emotion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/bface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/cface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/fface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/jxface2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/tface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/wface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/emotion/images/yface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/gmap/gmap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/help/help.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/help/help.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/help/help.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/image.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/image.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/alignicon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/image/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/insertframe/insertframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/internal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/link/link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/map/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/map/show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/music/music.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/music/music.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/music/music.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/preview/preview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/addimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/brush.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/delimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/delimgH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/emptyH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/eraser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/redo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/redoH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/scale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/scaleH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/size.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/undo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/images/undoH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/scrawl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/scrawl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/scrawl/scrawl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/searchreplace/searchreplace.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/searchreplace/searchreplace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/snapscreen/snapscreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/spechars/spechars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/spechars/spechars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/table/dragicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/table/edittable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/table/edittable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/table/edittable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/table/edittd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/table/edittip.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/images/bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/images/pre0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/images/pre1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/images/pre2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/images/pre3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/images/pre4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/template.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/template/template.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/center_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/file-icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/file-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/left_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/none_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/right_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/video.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/video.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/video/video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/webapp/webapp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/wordimage/imageUploader.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/wordimage/tangram.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/wordimage/wordimage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/dialogs/wordimage/wordimage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/addimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/alldeletebtnhoverskin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/alldeletebtnupskin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/deletedisable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/deleteenable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/listbackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/localimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/rotateleftdisable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/rotateleftenable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/rotaterightdisable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/rotaterightenable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/en/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/zh-cn/images/copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/zh-cn/images/localimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/zh-cn/images/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/zh-cn/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/lang/zh-cn/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/php/Uploader.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/php/action_crawler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/php/action_list.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/php/action_upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/php/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/php/controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/css/ueditor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/css/ueditor.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/dialogbase.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/anchor.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/arrow_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/arrow_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/button-bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/cancelbutton.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/charts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/cursor_h.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/cursor_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/cursor_v.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/cursor_v.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/dialog-title-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/fileScan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/highlighted.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/icons-all.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/loaderror.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/lock.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/neweditor-tab-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/pagebreak.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/scale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/sortable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/spacer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/sparator_v.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/table-cell-align.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/tangram-colorpicker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/toolbar_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/unhighlighted.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/videologo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/word.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/default/images/wordpaste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/themes/iframe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/SyntaxHighlighter/shCore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/adapters/mootools-adapter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/adapters/prototype-adapter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/adapters/standalone-framework.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/annotations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/canvas-tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/canvas-tools.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/exporting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/heatmap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/map.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/themes/dark-blue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/themes/dark-green.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/themes/gray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/themes/grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/highcharts/themes/skies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/jquery-1.10.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/jquery-1.10.2.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/font/vjs.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/font/vjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/font/vjs.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/font/vjs.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/video-js.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/video-js.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/video-js.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/video.dev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/video-js/video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/Uploader.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.flashonly.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.flashonly.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.html5only.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.html5only.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.withoutimage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/zeroclipboard/ZeroClipboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/ueditor.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/ueditor.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/ueditor.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/ueditor.parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ueditor/ueditor.parse.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/themes/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/themes/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/themes/bootstrap-xadmin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.page.dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.plugin.aggregation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.plugin.formset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.plugin.importexport.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.plugin.quickfilter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.plugins.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.widget.editable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/css/xadmin.widget.select-transfer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.page.dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.page.form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.page.list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.batch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.bookmark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.details.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.editable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.filters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.formset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.importexport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.portal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.quick-form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.quickfilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.refresh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.revision.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.sortablelist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.plugin.themes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.responsive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.widget.datetime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.widget.multiselect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.widget.select-transfer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/js/xadmin.widget.select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/autotype/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-clockpicker/bootstrap-clockpicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-clockpicker/bootstrap-clockpicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-clockpicker/bootstrap-clockpicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-clockpicker/bootstrap-clockpicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/css/datepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.kr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.rs-latin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.rs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.sw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-image-gallery/css/bootstrap-image-gallery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-image-gallery/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-image-gallery/js/bootstrap-image-gallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-image-gallery/js/bootstrap-image-gallery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/css/bootstrap-modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/img/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/js/bootstrap-modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/js/bootstrap-modalmanager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/helpers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-timepicker/js/bootstrap-timepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/excanvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/excanvas.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.colorhelpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.aggregate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.canvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.categories.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.crosshair.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.errorbars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.fillbetween.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.navigate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.selection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.stack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.symbol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.threshold.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/flot/jquery.flot.time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.core.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.effect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.effect.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.mouse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.mouse.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.sortable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.sortable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery-ui/jquery.ui.widget.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/load-image/load-image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/load-image/load-image.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2-spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_pt-PT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_ua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2_locale_zh-hans.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/select2/select2x2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.bootstrap2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.bootstrap3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.legacy.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/selectize/selectize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/snapjs/snap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/snapjs/snap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/snapjs/snap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mangaupload/mangaupload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mangaupload/mangaupload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search/indexes/api/search_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/indexes/api/search_text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/migrations/0002_user_active.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/migrations/0003_auto_20181015_0900.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/models/feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/models/permission.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/permission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/models/purchase_and_favorite.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/purchase_and_favorite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/pay_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/pay_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/sms_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/sms_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/views/feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/views/perfection.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/perfection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/views/register_and_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/register_and_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/views/user_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/user_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/plugins/db_backup.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/plugins/db_backup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/plugins/order_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/plugins/order_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/plugins/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/plugins/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/static/xadmin/vendor/select2/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/static/xadmin/vendor/select2/select2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/views/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/views/list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/comics_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/comics_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/load_comics_resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/load_comics_resource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/log_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/log_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/mysql_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/mysql_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/show_errlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/show_errlog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comicsSDK/txt_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comicsSDK/txt_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get.cmd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../get.fish" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../getComic-gui.py" beforeDir="false" />
@@ -18,10 +705,13 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/comics$order_statistic_string.coverage" NAME="order_statistic_string Coverage Results" MODIFIED="1539137209671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adminx/helpers" />
-    <SUITE FILE_PATH="coverage/comics$test.coverage" NAME="test Coverage Results" MODIFIED="1539324566345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comics$test.coverage" NAME="test Coverage Results" MODIFIED="1543455103813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comics$show_errlog.coverage" NAME="show_errlog Coverage Results" MODIFIED="1539835719780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../comicsSDK" />
+    <SUITE FILE_PATH="coverage/comics$receipt_validation.coverage" NAME="receipt_validation Coverage Results" MODIFIED="1543400880093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/userapi/helpers" />
     <SUITE FILE_PATH="coverage/comics$order_statistics_task.coverage" NAME="order_statistics_task Coverage Results" MODIFIED="1539161610977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adminx" />
     <SUITE FILE_PATH="coverage/comics$tests.coverage" NAME="tests Coverage Results" MODIFIED="1539246357044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adminx" />
     <SUITE FILE_PATH="coverage/comics$backup_handler.coverage" NAME="backup_handler Coverage Results" MODIFIED="1538120856131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adminx/helpers" />
+    <SUITE FILE_PATH="coverage/comics$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1541060392796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/userapi" />
     <SUITE FILE_PATH="coverage/comics$make_order.coverage" NAME="make_order Coverage Results" MODIFIED="1536113731516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api/helpers" />
   </component>
   <component name="DatabaseView">
@@ -61,90 +751,108 @@
     <session id="1448971041">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="41" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.160" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.178" value="1" />
           <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.193" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.214" value="1" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.382" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.734" value="1" />
           <entry key="project.open.time.8" value="5" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="2018-09-08_05-23-44" value="1" />
           <entry key="2018-09-08_05-25-41" value="1" />
-          <entry key="adminx_databackup" value="1" />
+          <entry key="adminx_databackup" value="2" />
           <entry key="adminx_mangaupload" value="1" />
           <entry key="adminx_notice" value="3" />
-          <entry key="adminx_orderstatistic" value="6" />
-          <entry key="adminx_orderstatisticdetail" value="6" />
+          <entry key="adminx_orderstatistic" value="7" />
+          <entry key="adminx_orderstatisticdetail" value="7" />
           <entry key="adminx_transaction" value="2" />
-          <entry key="api_category" value="3" />
-          <entry key="api_comicinfo" value="6" />
-          <entry key="api_imgresource" value="1" />
-          <entry key="api_search" value="3" />
-          <entry key="auth_group" value="2" />
+          <entry key="api_category" value="8" />
+          <entry key="api_comiccoverimg" value="9" />
+          <entry key="api_comicinfo" value="30" />
+          <entry key="api_imgresource" value="29" />
+          <entry key="api_search" value="33" />
+          <entry key="auth_group" value="3" />
           <entry key="auth_group_permissions" value="4" />
-          <entry key="auth_permission" value="4" />
-          <entry key="auth_user" value="5" />
+          <entry key="auth_permission" value="7" />
+          <entry key="auth_user" value="7" />
           <entry key="auth_user_groups" value="1" />
           <entry key="auth_user_user_permissions" value="3" />
+          <entry key="celery_taskmeta" value="1" />
+          <entry key="celery_tasksetmeta" value="1" />
           <entry key="config" value="1" />
           <entry key="css" value="137" />
+          <entry key="djcelery_crontabschedule" value="1" />
+          <entry key="djcelery_intervalschedule" value="2" />
+          <entry key="djcelery_periodictask" value="1" />
+          <entry key="djcelery_periodictasks" value="1" />
+          <entry key="djcelery_taskstate" value="1" />
+          <entry key="djcelery_workerstate" value="1" />
           <entry key="eot" value="1" />
           <entry key="git" value="1" />
-          <entry key="html" value="235" />
-          <entry key="jpg" value="2" />
-          <entry key="js" value="60" />
+          <entry key="html" value="247" />
+          <entry key="jpg" value="9" />
+          <entry key="js" value="74" />
           <entry key="log" value="25" />
-          <entry key="png" value="6" />
-          <entry key="py" value="1378" />
+          <entry key="png" value="7" />
+          <entry key="py" value="2868" />
           <entry key="pyi" value="4" />
           <entry key="request" value="1" />
-          <entry key="sql" value="9" />
+          <entry key="sql" value="12" />
           <entry key="svg" value="3" />
           <entry key="tables" value="4" />
-          <entry key="txt" value="7" />
-          <entry key="userapi_feedback" value="6" />
-          <entry key="userapi_feedbackdetail" value="13" />
-          <entry key="userapi_permission" value="4" />
-          <entry key="userapi_purchaseandfavorite" value="3" />
-          <entry key="userapi_transaction" value="2" />
-          <entry key="userapi_user" value="20" />
+          <entry key="txt" value="16" />
+          <entry key="userapi_comment" value="5" />
+          <entry key="userapi_feedback" value="9" />
+          <entry key="userapi_feedbackdetail" value="16" />
+          <entry key="userapi_permission" value="11" />
+          <entry key="userapi_purchaseandfavorite" value="10" />
+          <entry key="userapi_transaction" value="6" />
+          <entry key="userapi_user" value="35" />
           <entry key="xadmin_bookmark" value="1" />
           <entry key="xadmin_log" value="1" />
           <entry key="xadmin_usersettings" value="3" />
           <entry key="xadmin_userwidget" value="4" />
+          <entry key="翻译" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="137" />
-          <entry key="Database Element" value="112" />
-          <entry key="HTML" value="235" />
-          <entry key="Image" value="8" />
-          <entry key="JavaScript" value="60" />
+          <entry key="Database Element" value="270" />
+          <entry key="HTML" value="247" />
+          <entry key="Image" value="16" />
+          <entry key="JavaScript" value="74" />
           <entry key="Log" value="1" />
-          <entry key="PLAIN_TEXT" value="36" />
-          <entry key="Python" value="1378" />
+          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="Python" value="2868" />
           <entry key="PythonStub" value="4" />
-          <entry key="SQL" value="6" />
+          <entry key="SQL" value="9" />
           <entry key="SVG" value="3" />
           <entry key="Scratch" value="3" />
           <entry key="UNKNOWN" value="1" />
@@ -154,26 +862,27 @@
         <counts>
           <entry key="CSS" value="636" />
           <entry key="CommandLine" value="63" />
-          <entry key="HTML" value="4513" />
-          <entry key="JavaScript" value="1932" />
-          <entry key="PLAIN_TEXT" value="64" />
-          <entry key="Python" value="38820" />
+          <entry key="HTML" value="4644" />
+          <entry key="JavaScript" value="4586" />
+          <entry key="PLAIN_TEXT" value="260" />
+          <entry key="Python" value="76026" />
           <entry key="SQL" value="6" />
-          <entry key="Scratch" value="147" />
+          <entry key="Scratch" value="358" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Django Console" value="1572" />
-          <entry key="cell" value="147" />
+          <entry key="Django Console" value="1586" />
+          <entry key="cell" value="358" />
           <entry key="css" value="636" />
-          <entry key="dummy" value="34" />
-          <entry key="html" value="4513" />
-          <entry key="js" value="1932" />
-          <entry key="py" value="37254" />
+          <entry key="dummy" value="59" />
+          <entry key="html" value="4644" />
+          <entry key="js" value="4586" />
+          <entry key="py" value="74446" />
           <entry key="py@comics" value="68" />
-          <entry key="txt" value="25" />
+          <entry key="txt" value="36" />
+          <entry key="翻译" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -185,70 +894,114 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminx/adminx/adminx_upload.py">
+        <entry file="file://$PROJECT_DIR$/userapi/helpers/receipt_validation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1312">
-              <caret line="290" column="31" selection-start-line="290" selection-start-column="31" selection-end-line="290" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comic/dev_settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comic/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state relative-caret-position="-571">
               <folding>
-                <element signature="e#22#31#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1543400924236" expanded="true" signature="90:95" ph="..." />
+                <marker date="1543400924236" expanded="true" signature="430:517" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/views/comment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <marker date="1543458816623" expanded="true" signature="750:752" ph="..." />
+                <marker date="1543458816623" expanded="true" signature="1586:1591" ph="..." />
+                <marker date="1543458816623" expanded="true" signature="2124:2473" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/views/feedback.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2475">
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/views/perfection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-75">
+              <caret line="234" column="40" selection-start-line="234" selection-start-column="40" selection-end-line="234" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/views/register_and_login.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-285">
+              <caret line="172" column="40" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/views/user_detail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-825">
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userapi/pay_task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/comic/pro_settings.py">
+        <entry file="file://$PROJECT_DIR$/userapi/sms_task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6620">
-              <caret line="318" column="5" selection-start-line="318" selection-start-column="5" selection-end-line="318" selection-end-column="5" />
+            <state relative-caret-position="-1245">
+              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               <folding>
-                <element signature="e#306#315#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -259,44 +1012,44 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>order_statistic</find>
-      <find>title</find>
-      <find>&quot;</find>
-      <find>{{</find>
-      <find>%s</find>
-      <find>%</find>
-      <find>i</find>
-      <find>content-toolbar btn-toolbar pull-right clearfix</find>
-      <find>set</find>
-      <find>diff</find>
-      <find>print</find>
-      <find>alert</find>
-      <find>progress-bar-success</find>
-      <find>change</find>
-      <find>get_model_perms</find>
-      <find>has_ch</find>
-      <find>has_change_permission</find>
-      <find>widget</find>
-      <find>widget()</find>
-      <find>widget.</find>
-      <find>UserSettings</find>
-      <find>wid</find>
-      <find>editor</find>
-      <find>self.user</find>
-      <find>MEDIA_ROOT</find>
-      <find>SECRET_KEY</find>
-      <find>APP_TITLE</find>
+      <find>pack_comic_data</find>
+      <find>email</find>
+      <find>get_name_from_value</find>
+      <find>628</find>
+      <find>622</find>
+      <find>630</find>
+      <find>update</find>
+      <find>634</find>
+      <find>i_d</find>
+      <find>637</find>
+      <find>sudo</find>
+      <find>du</find>
+      <find>egg</find>
+      <find>key</find>
+      <find>ComicMethod</find>
+      <find>En</find>
+      <find>is_login</find>
+      <find>logout</find>
       <find>settings</find>
-      <find>LOGGING</find>
-      <find>LOGGING_C</find>
+      <find>639</find>
+      <find>perm_dict</find>
+      <find>643</find>
+      <find>10</find>
+      <find>def h</find>
+      <find>def r</find>
+      <find>def he</find>
+      <find>transaction_id</find>
+      <find>ENd</find>
+      <find>en</find>
+      <find>lang</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -306,6 +1059,17 @@
       <replace>list_per_page</replace>
       <replace>feedback</replace>
       <replace>'</replace>
+      <replace>vn</replace>
+      <replace>this_category_of_comic_do_not_exist</replace>
+      <replace>__get_name__()</replace>
+      <replace>_get_name()</replace>
+      <replace>vi</replace>
+      <replace>api.helpers.</replace>
+      <replace>api.helpers.EnumBase</replace>
+      <replace>api.helpers.code</replace>
+      <replace>GET</replace>
+      <replace>qs</replace>
+      <replace>parm_dict</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -314,57 +1078,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/adminx/helpers/order_statistic_string.py" />
-        <option value="$PROJECT_DIR$/adminx/adminx/adminxglobal.py" />
-        <option value="$PROJECT_DIR$/adminx/adminx/__init__.py" />
-        <option value="$PROJECT_DIR$/templates/statistics/order_statistic.html" />
-        <option value="$PROJECT_DIR$/adminx/adminx/adminx_statistics.py" />
-        <option value="$PROJECT_DIR$/adminx/migrations/0003_orderstatistic_orderstatisticdetail.py" />
-        <option value="$PROJECT_DIR$/adminx/order_statistics_task.py" />
-        <option value="$PROJECT_DIR$/userapi/admin.py" />
-        <option value="$PROJECT_DIR$/xadmin/plugins/order_statistic.py" />
-        <option value="$PROJECT_DIR$/adminx/models/statistics.py" />
-        <option value="$PROJECT_DIR$/adminx/tests.py" />
-        <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/adminx/views/__init__.py" />
-        <option value="$PROJECT_DIR$/adminx/urls.py" />
-        <option value="$PROJECT_DIR$/adminx/helpers/__init__.py" />
-        <option value="$PROJECT_DIR$/adminx/static/js/peogress_bar.js" />
-        <option value="$PROJECT_DIR$/adminx/static/js/progress_bar.js" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/adminx/helpers/piece.py" />
-        <option value="$PROJECT_DIR$/xadmin/plugins/manga_upload.py" />
-        <option value="$PROJECT_DIR$/adminx/helpers/progress_bar.py" />
-        <option value="$PROJECT_DIR$/adminx/views/check_progress.py" />
-        <option value="$PROJECT_DIR$/templates/mangaupload/mangaupload.html" />
-        <option value="$PROJECT_DIR$/adminx/static/progress/js/progress_bar.js" />
-        <option value="$PROJECT_DIR$/templates/database/tables.html" />
-        <option value="$PROJECT_DIR$/xadmin/plugins/db_backup.py" />
-        <option value="$PROJECT_DIR$/adminx/adminx/adminx_database.py" />
-        <option value="$PROJECT_DIR$/xadmin/views/dashboard.py" />
-        <option value="$PROJECT_DIR$/settings/pro_settings.py" />
-        <option value="$PROJECT_DIR$/settings/__init__.py" />
-        <option value="$PROJECT_DIR$/settings/base.py" />
-        <option value="$PROJECT_DIR$/comic/wsgi.py" />
-        <option value="$PROJECT_DIR$/comic/settings.py" />
-        <option value="$PROJECT_DIR$/api/models/comic_info.py" />
+        <option value="$PROJECT_DIR$/userapi/helpers/language/__init__.py" />
+        <option value="$PROJECT_DIR$/userapi/helpers/language/ms.py" />
+        <option value="$PROJECT_DIR$/xadmin/views/list.py" />
+        <option value="$PROJECT_DIR$/api/helpers/decorator.py" />
         <option value="$PROJECT_DIR$/api/models/img_resource.py" />
-        <option value="$PROJECT_DIR$/adminx/helpers/mysql_handler.py" />
-        <option value="$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py" />
-        <option value="$PROJECT_DIR$/adminx/helpers/backup_handler.py" />
-        <option value="$PROJECT_DIR$/comic/urls.py" />
-        <option value="$PROJECT_DIR$/api/views/comics_detail.py" />
-        <option value="$PROJECT_DIR$/userapi/views/register_and_login.py" />
+        <option value="$PROJECT_DIR$/adminx/static/progress/js/progress_bar.js" />
+        <option value="$PROJECT_DIR$/api/models/search.py" />
+        <option value="$PROJECT_DIR$/api/helpers/view_listbase.py" />
+        <option value="$PROJECT_DIR$/userapi/models/__init__.py" />
+        <option value="$PROJECT_DIR$/userapi/models/comment.py" />
+        <option value="$PROJECT_DIR$/api/redis_task.py" />
+        <option value="$PROJECT_DIR$/userapi/views/__init__.py" />
+        <option value="$PROJECT_DIR$/api/helpers/img_handler.py" />
+        <option value="$PROJECT_DIR$/userapi/urls.py" />
         <option value="$PROJECT_DIR$/userapi/sms_task.py" />
-        <option value="$PROJECT_DIR$/userapi/views/perfection.py" />
+        <option value="$PROJECT_DIR$/api/helpers/myenum.py" />
+        <option value="$PROJECT_DIR$/api/views/view_listbase.py" />
+        <option value="$PROJECT_DIR$/userapi/models/purchase_and_favorite.py" />
+        <option value="$PROJECT_DIR$/api/urls.py" />
+        <option value="$PROJECT_DIR$/api/views/fuzzy_search.py" />
+        <option value="$PROJECT_DIR$/api/helpers/comic_method.py" />
+        <option value="$PROJECT_DIR$/api/helpers/code/en.py" />
+        <option value="$PROJECT_DIR$/api/helpers/code/zh.py" />
+        <option value="$PROJECT_DIR$/api/views/comics_detail.py" />
+        <option value="$PROJECT_DIR$/api/helpers/code/vi.py" />
+        <option value="$PROJECT_DIR$/api/helpers/code/ms.py" />
+        <option value="$PROJECT_DIR$/userapi/admin.py" />
         <option value="$PROJECT_DIR$/userapi/views/feedback.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/comic/base.py" />
-        <option value="$PROJECT_DIR$/comic/dev_settings.py" />
-        <option value="$PROJECT_DIR$/comic/pro_settings.py" />
-        <option value="$PROJECT_DIR$/api/migrations/0001_initial.py" />
+        <option value="$PROJECT_DIR$/../../projecthistory/server_comics/api/admin.py" />
+        <option value="$PROJECT_DIR$/userapi/models/user.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/userapi/pay_task.py" />
+        <option value="$PROJECT_DIR$/api/admin.py" />
+        <option value="$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py" />
         <option value="$PROJECT_DIR$/adminx/adminx/adminx_upload.py" />
+        <option value="$PROJECT_DIR$/adminx/helpers/piece.py" />
+        <option value="$PROJECT_DIR$/api/helpers/__init__.py" />
+        <option value="$PROJECT_DIR$/userapi/helpers/receipt_validation.py" />
+        <option value="$PROJECT_DIR$/api/views.py" />
+        <option value="$PROJECT_DIR$/api/views/__init__.py" />
+        <option value="$PROJECT_DIR$/api/views/error_view.py" />
+        <option value="$PROJECT_DIR$/comic/dev_settings.py" />
+        <option value="$PROJECT_DIR$/comic/urls.py" />
+        <option value="$PROJECT_DIR$/api/helpers/view_backend.py" />
+        <option value="$PROJECT_DIR$/api/views/comics_info.py" />
+        <option value="$PROJECT_DIR$/api/views/comics_list.py" />
+        <option value="$PROJECT_DIR$/api/views/index.py" />
+        <option value="$PROJECT_DIR$/api/views/purchase_chapter.py" />
+        <option value="$PROJECT_DIR$/userapi/views/comment.py" />
+        <option value="$PROJECT_DIR$/userapi/views/perfection.py" />
+        <option value="$PROJECT_DIR$/userapi/views/register_and_login.py" />
       </list>
     </option>
   </component>
@@ -374,10 +1138,24 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="972" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Angular</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -387,7 +1165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -404,13 +1181,20 @@
               <item name="comics" type="b2602c69:ProjectViewProjectNode" />
               <item name="comics" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="comics" type="b2602c69:ProjectViewProjectNode" />
               <item name="comics" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comics" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="comics" type="b2602c69:ProjectViewProjectNode" />
@@ -421,7 +1205,13 @@
               <item name="comics" type="b2602c69:ProjectViewProjectNode" />
               <item name="comics" type="462c0819:PsiDirectoryNode" />
               <item name="userapi" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comics" type="462c0819:PsiDirectoryNode" />
+              <item name="userapi" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="comics" type="b2602c69:ProjectViewProjectNode" />
@@ -431,6 +1221,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,11 +1233,18 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/ljxproject/comicsSDK1.git" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/views" />
+      <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/api/helpers" />
+      <recent name="$PROJECT_DIR$/api/helpers/code" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/adminx" />
@@ -454,13 +1252,6 @@
       <recent name="$PROJECT_DIR$/userapi/static/feedback" />
       <recent name="$PROJECT_DIR$/userapi/static/feedback/css" />
       <recent name="$PROJECT_DIR$/static/feedback/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/comic" />
-      <recent name="$PROJECT_DIR$/settings" />
-      <recent name="$PROJECT_DIR$/adminx/static/progress" />
-      <recent name="$PROJECT_DIR$/adminx" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -476,7 +1267,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.test">
-    <configuration name="backup_handler" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="receipt_validation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="comics" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -484,12 +1275,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adminx/helpers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/userapi/helpers" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminx/helpers/backup_handler.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/userapi/helpers/receipt_validation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -498,7 +1289,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="order_statistic_string" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="show_errlog" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="comics" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -506,34 +1297,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adminx/helpers" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../comicsSDK" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminx/helpers/order_statistic_string.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="order_statistics_task" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="comics" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adminx" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminx/order_statistics_task.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../comicsSDK/show_errlog.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -556,6 +1325,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="comics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/userapi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/userapi/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -612,18 +1403,18 @@
     <list>
       <item itemvalue="Django server.comics" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.backup_handler" />
-      <item itemvalue="Python.order_statistic_string" />
-      <item itemvalue="Python.order_statistics_task" />
       <item itemvalue="Python.tests" />
+      <item itemvalue="Python.show_errlog" />
+      <item itemvalue="Python.tests (1)" />
+      <item itemvalue="Python.receipt_validation" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.receipt_validation" />
+        <item itemvalue="Python.tests (1)" />
+        <item itemvalue="Python.show_errlog" />
         <item itemvalue="Python.tests" />
-        <item itemvalue="Python.order_statistics_task" />
-        <item itemvalue="Python.order_statistic_string" />
-        <item itemvalue="Python.backup_handler" />
       </list>
     </recent_temporary>
   </component>
@@ -650,27 +1441,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.17399268" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.16605617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5016234" side_tool="true" weight="0.14224665" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32959184" />
       <window_info active="true" anchor="bottom" id="manage.py@comics" order="1" weight="0.2387755" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4993895" weight="0.3612245" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4993895" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4993895" weight="0.34183672" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4993895" weight="0.44387755" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50061053" side_tool="true" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.49591836" />
-      <window_info anchor="bottom" id="Python Console" order="14" weight="0.43367347" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.43367347" />
+      <window_info anchor="bottom" x="0" y="0" width="1680" height="1050" id="Terminal" order="14" visible="true" weight="0.26530612" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="15" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -699,58 +1491,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://8b47e73a-14a1-499e-80b6-53264b18b5f9/schema/comics/table/auth_user_groups">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8b47e73a-14a1-499e-80b6-53264b18b5f9/schema/comics/table/auth_permission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xadmin/views/dashboard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="573" lean-forward="true" selection-start-line="573" selection-end-line="573" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xadmin/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comic/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/os.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xadmin/plugins/importexport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-547">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminx/adminx/adminx_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        <state relative-caret-position="215">
+          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -763,302 +1507,401 @@
     <entry file="file://$PROJECT_DIR$/adminx/adminx/adminx_statistics.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminx/adminx/adminxglobal.py">
+    <entry file="file://$PROJECT_DIR$/adminx/adminx/adminx_upload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="27" column="65" lean-forward="true" selection-start-line="27" selection-end-line="28" />
-          <folding>
-            <element signature="e#307#316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/img_resource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminx/helpers/mysql_handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminx/helpers/backup_handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="607">
+          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comic/urls.py">
+    <entry file="file://$PROJECT_DIR$/adminx/adminx/adminxglobal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state relative-caret-position="-28">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/views/comics_detail.py">
+    <entry file="file://$PROJECT_DIR$/adminx/forms/cdb_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userapi/views/register_and_login.py">
+    <entry file="file://$PROJECT_DIR$/adminx/forms/manga_upload_form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/email/__init__.py">
+    <entry file="file://$PROJECT_DIR$/adminx/helpers/backup_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/helpers/mysql_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/helpers/paginator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/helpers/piece.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/helpers/progress_bar.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/userapi/sms_task.py">
+    <entry file="file://$PROJECT_DIR$/adminx/models/data_backup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="-28">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/models/manga_upload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/models/statistics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/models/notice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/views/resource_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminx/order_statistics_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userapi/views/perfection.py">
+    <entry file="file://$PROJECT_DIR$/adminx/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/code/en.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="215">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userapi/views/__init__.py">
+    <entry file="file://$PROJECT_DIR$/api/helpers/comic_method.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="-1755">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+            <marker date="1543308317950" expanded="true" signature="4210:4215" ph="..." />
+          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/decorator.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/fuzzy_search_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/img_handler.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/make_order.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/myenum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900">
+          <folding>
+            <marker date="1543220707211" expanded="true" signature="694:700" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/helpers/piece.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/helpers/serializer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1145">
+        <state relative-caret-position="215">
+          <caret line="70" column="56" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="56" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userapi/urls.py">
+    <entry file="file://$PROJECT_DIR$/api/helpers/view_backend.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="285">
+          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1543458816631" expanded="true" signature="717:857" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/comics_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2265">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/comics_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="139" column="40" selection-start-line="139" selection-start-column="40" selection-end-line="139" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1543458816615" expanded="true" signature="5690:5691" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/comics_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-675">
+          <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1543458816626" expanded="true" signature="2252:2257" ph="..." />
+            <marker date="1543458816626" expanded="true" signature="4622:5688" ph="..." />
+            <marker date="1543458816626" expanded="true" signature="5765:5766" ph="..." />
+            <marker date="1543458816626" expanded="true" signature="5765:5770" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/error_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+            <marker date="1543458113299" expanded="true" signature="268:411" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/fuzzy_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1065">
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5235">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1543458816628" expanded="true" signature="3872:3878" ph="..." />
+            <marker date="1543458816628" expanded="true" signature="4496:4707" ph="..." />
+            <marker date="1543458816628" expanded="true" signature="4702:4707" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/purchase_chapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-977">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-729">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userapi/helpers/receipt_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-571">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1543400924236" expanded="true" signature="90:95" ph="..." />
+            <marker date="1543400924236" expanded="true" signature="430:517" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userapi/views/comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1543458816623" expanded="true" signature="750:752" ph="..." />
+            <marker date="1543458816623" expanded="true" signature="1586:1591" ph="..." />
+            <marker date="1543458816623" expanded="true" signature="2124:2473" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/userapi/views/feedback.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="-2475">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/re.py">
+    <entry file="file://$PROJECT_DIR$/userapi/views/perfection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
+        <state relative-caret-position="-75">
+          <caret line="234" column="40" selection-start-line="234" selection-start-column="40" selection-end-line="234" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/xlrd/compdoc.py">
+    <entry file="file://$PROJECT_DIR$/userapi/views/register_and_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        <state relative-caret-position="-285">
+          <caret line="172" column="40" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comic/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/userapi/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userapi/views/user_detail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="-825">
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/django/utils/log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/django/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/django/conf/global_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="569" lean-forward="true" selection-start-line="569" selection-end-line="570" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/kombu/tests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1630">
-          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/IPython/core/interactiveshell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-691">
-          <caret line="2962" selection-start-line="2962" selection-end-line="2962" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../venv/comics_venv/lib/python3.6/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1312">
-          <caret line="290" column="31" selection-start-line="290" selection-start-column="31" selection-end-line="290" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comic/dev_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/__init__.py">
+    <entry file="file://$PROJECT_DIR$/userapi/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/migrations/0002_auto_20181015_0900.py">
+    <entry file="file://$PROJECT_DIR$/userapi/pay_task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-608" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/category.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1222">
+        <state relative-caret-position="-28">
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/comic_info.py">
+    <entry file="file://$PROJECT_DIR$/userapi/sms_task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="-1245">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/migrations/0002_auto_20181015_0931.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userapi/migrations/0003_auto_20181015_0900.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-258" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminx/adminx/adminx_upload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comic/pro_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6620">
-          <caret line="318" column="5" selection-start-line="318" selection-start-column="5" selection-end-line="318" selection-end-column="5" />
-          <folding>
-            <element signature="e#306#315#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

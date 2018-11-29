@@ -333,7 +333,7 @@ the specific language governing permissions and limitations under the Apache Lic
      * @param options.data a function(searchTerm, pageNumber, context) that should return an object containing query string parameters for the above url.
      * @param options.dataType request data type: ajax, jsonp, other datatatypes supported by jQuery's $.ajax function or the transport function if specified
      * @param options.traditional a boolean flag that should be true if you wish to use the traditional style of param serialization for the ajax request
-     * @param options.quietMillis (optional) milliseconds to wait before making the ajaxRequest, helps debounce the ajax function if invoked too often
+     * @param options.quietMillis (optional) milliseconds to wait before making the ajaxRequest, helpers debounce the ajax function if invoked too often
      * @param options.results a function(remoteData, pageNumber) that converts data returned form the remote request to the format expected by Select2.
      *      The expected format is an object containing the following keys:
      *      results array of objects that will be used as choices

@@ -1,1 +1,1 @@
-from adminx.views.check_progress import check_progress
+from adminx.views.resource_handler import check_progress

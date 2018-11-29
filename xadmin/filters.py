@@ -17,7 +17,6 @@ from xadmin.views.list import EMPTY_CHANGELIST_VALUE
 from xadmin.util import is_related_field, is_related_field2
 import datetime
 
-from api.models import ComicStatus, CategoryStatus
 
 FILTER_PREFIX = '_p_'
 SEARCH_VAR = '_q_'
@@ -458,45 +457,45 @@ class RelatedFieldListFilter(ListFieldFilter):
 
 # 实现comic status 和 category 的映射
 
-@manager.register
-class StatusAndCategoryFilter(ListFieldFilter):
-    lookup_formats = {'exact': '%s__exact'}
-
-    @classmethod
-    def test(cls, field, request, params, model, admin_view, field_path):
-        if model.__name__ == "ComicInfo" or model.__name__ == "Category":
-            if field_path == "status" or field_path == "category":
-                return True
-        else:
-            return False
-
-    def choices(self):
-        yield {
-            'selected': self.lookup_exact_val is '',
-            'query_string': self.query_string({}, [self.lookup_exact_name]),
-            'display': _('All')
-        }
-        s_k = [i for i in ComicStatus.__members__.keys()]
-        s_v = [i.value for i in ComicStatus.__members__.values()]
-        c_k = [i for i in CategoryStatus.__members__.keys()]
-        c_v = [i.value for i in CategoryStatus.__members__.values()]
-        s = dict(zip(s_k, s_v))
-        c = dict(zip(c_k, c_v))
-        d = dict(s, **c)
-        if self.field_path == "status":
-            for i in s_k:
-                yield {
-                    'selected': self.lookup_exact_val == i,
-                    'query_string': "?_p_%s__exact=%d" % ("status", d[i]),
-                    'display': i,
-                }
-        else:
-            for i in c_k:
-                yield {
-                    'selected': self.lookup_exact_val == i,
-                    'query_string': "?_p_%s__exact=%d" % ("category", d[i]),
-                    'display': i,
-                }
+# @manager.register
+# class StatusAndCategoryFilter(ListFieldFilter):
+#     lookup_formats = {'exact': '%s__exact'}
+#
+#     @classmethod
+#     def test(cls, field, request, params, model, admin_view, field_path):
+#         if model.__name__ == "ComicInfo" or model.__name__ == "Category":
+#             if field_path == "status" or field_path == "category":
+#                 return True
+#         else:
+#             return False
+#
+#     def choices(self):
+#         yield {
+#             'selected': self.lookup_exact_val is '',
+#             'query_string': self.query_string({}, [self.lookup_exact_name]),
+#             'display': _('All')
+#         }
+#         s_k = [i for i in ComicStatus.__members__.keys()]
+#         s_v = [i.value for i in ComicStatus.__members__.values()]
+#         c_k = [i for i in CategoryStatus.__members__.keys()]
+#         c_v = [i.value for i in CategoryStatus.__members__.values()]
+#         s = dict(zip(s_k, s_v))
+#         c = dict(zip(c_k, c_v))
+#         d = dict(s, **c)
+#         if self.field_path == "status":
+#             for i in s_k:
+#                 yield {
+#                     'selected': self.lookup_exact_val == i,
+#                     'query_string': "?_p_%s__exact=%d" % ("status", d[i]),
+#                     'display': i,
+#                 }
+#         else:
+#             for i in c_k:
+#                 yield {
+#                     'selected': self.lookup_exact_val == i,
+#                     'query_string': "?_p_%s__exact=%d" % ("category", d[i]),
+#                     'display': i,
+#                 }
 
 
 @manager.register

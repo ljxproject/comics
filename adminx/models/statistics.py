@@ -25,7 +25,7 @@ class OrderStatistic(models.Model, Model):
 
 
 class OrderStatisticDetail(models.Model, Model):
-    date = models.DateField(verbose_name="日期", auto_now_add=True, unique=True)
+    date = models.DateField(verbose_name="日期", unique=True)
     income = models.CharField(verbose_name="收入($)", max_length=8)
     expect_income = models.CharField(verbose_name="期望收入($)", max_length=8)
     paid_order = models.IntegerField(verbose_name="已支付订单数")

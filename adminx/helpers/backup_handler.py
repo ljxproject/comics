@@ -17,10 +17,12 @@ class BackupHandler(object):
 
     def backup(self, backup_type, basedir=None):
         if backup_type == 0:
-            order = 'innobackupex --user=%s --password=%s %s' % (
+            order = 'innobackupex --user=%s --password=%s %s' % (  # mac
+                # order = 'sudo innobackupex --user=%s --password=%s %s' % (
                 self.user, self.password, self.backup_file)
         elif backup_type == 1 or backup_type == 2:
-            order = 'innobackupex --user=%s --password=%s --incremental --incremental-basedir=%s %s' % (
+            order = 'innobackupex --user=%s --password=%s --incremental --incremental-basedir=%s %s' % (  # mac
+                # order = 'sudo innobackupex --user=%s --password=%s --incremental --incremental-basedir=%s %s' % (
                 self.user, self.password, basedir, self.backup_file)
         else:
             return Exception("备份类型不合法")
@@ -44,8 +46,10 @@ class BackupHandler(object):
                 file_re = os.popen("cd %s && ls -lht " % self.backup_file).readlines()[1]  # todo
                 file_name = re.findall('\d+-\d+-.+-\d+-\d+', file_re)[0]
                 backup_file = '%s%s' % (self.backup_file, file_name)
-                os.system("innobackupex --apply-log --export %s" % backup_file)
-                file_size = os.popen("du -sh %s |cut -d '/' -f 1" % backup_file).readlines()[0]
+                os.system("innobackupex --apply-log --export %s" % backup_file)  # mac
+                # os.system("sudo innobackupex --apply-log --export %s" % backup_file)
+                file_size = os.popen("du -sh %s |cut -d '/' -f 1" % backup_file).readlines()[0]  # mac
+                # file_size = os.popen("sudo du -sh %s |cut -d '/' -f 1" % backup_file).readlines()[0]
                 return (file_size, file_name, backup_file)
         except Exception as e:
             return e

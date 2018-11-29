@@ -14,7 +14,8 @@ class OrderStatisticPlugin(BaseAdminPlugin):
 
     def get_self_model(self):
         model = OrderStatistic
-        today, income, expect_income, paid_order, no_paid_order, expired_order, total_order = get_order_parm()
+        today, income, expect_income, paid_order, no_paid_order, expired_order, total_order = get_order_parm(
+            is_today=True)
         name_list = [0, 1, 2, 3, 4]
         for name in name_list:
             if not model.objects.filter(name=name).exists():
