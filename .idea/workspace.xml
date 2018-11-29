@@ -2,6 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="049e4163-9465-4948-a3f2-18bba1c1f10e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/grave.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adminx/views/resource_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/code/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/code/en.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/code/ms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/code/vi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/code/zh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/decorator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/myenum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/piece.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/helpers/view_backend.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/views/error_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/views/view_listbase.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pro_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supervisor.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/whoosh_index/MAIN_iud9tyzcvihiajrq.seg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/whoosh_index/MAIN_lwpj305et895sgxn.seg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/whoosh_index/MAIN_toq8vfyar0mnbj7d.seg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/whoosh_index/MAIN_zq3eikm4qka9w4wq.seg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/whoosh_index/_MAIN_9.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/helpers/language/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/helpers/language/en.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/helpers/language/ms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/helpers/language/vi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/helpers/receipt_validation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/models/comment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userapi/views/comment.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/翻译.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
@@ -13,11 +43,17 @@
       <change beforePath="$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/manga_uplaoad_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminx/helpers/paginator.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/paginator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminx/helpers/piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/helpers/piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/migrations/0002_auto_20181009_0239.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/migrations/0003_orderstatistic_orderstatisticdetail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/migrations/0004_auto_20181009_0749.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/migrations/0005_auto_20181015_0900.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates/whoosh_index/MAIN_WRITELOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminx/models/statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/models/statistics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminx/order_statistics_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/order_statistics_task.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminx/static/progress/js/progress_bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/static/progress/js/progress_bar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminx/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminx/views/check_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminx/views/resource_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminx/views/check_progress.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/helpers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/helpers/code.py" beforeDir="false" />
@@ -25,6 +61,9 @@
       <change beforePath="$PROJECT_DIR$/api/helpers/fuzzy_search_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/fuzzy_search_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/helpers/img_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/img_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/helpers/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/0002_auto_20181015_0931.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/helpers/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/comic_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/comic_info.py" afterDir="false" />
@@ -45,7 +84,11 @@
       <change beforePath="$PROJECT_DIR$/comic/pro_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/pro_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comic/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/comic/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/dev_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/load_error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/request.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/script.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/admin/css/base.css" beforeDir="false" />
@@ -564,7 +607,7 @@
       <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/img/ajax-loader.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/js/bootstrap-modal.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-modal/js/bootstrap-modalmanager.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/helpers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/xadmin/vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css" beforeDir="false" />
@@ -661,6 +704,7 @@
       <change beforePath="$PROJECT_DIR$/userapi/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userapi/migrations/0002_user_active.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userapi/migrations/0003_auto_20181015_0900.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userapi/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userapi/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userapi/models/feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/feedback.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userapi/models/permission.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/models/permission.py" afterDir="false" />
@@ -676,6 +720,34 @@
       <change beforePath="$PROJECT_DIR$/userapi/views/register_and_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/register_and_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userapi/views/user_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapi/views/user_detail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xadmin/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/de_DE/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/de_DE/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/en/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/en/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/es_MX/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/es_MX/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/eu/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/eu/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/id_ID/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/id_ID/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/ja/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/ja/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/lt/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/lt/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/nl_NL/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/nl_NL/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/pl/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/pl/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/pt_BR/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/pt_BR/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/ru_RU/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/ru_RU/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/zh_Hans/LC_MESSAGES/django.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/locale/zh_Hans/LC_MESSAGES/djangojs.mo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/migrations/0002_log.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/migrations/0003_auto_20160715_0100.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/xadmin/plugins/db_backup.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/plugins/db_backup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xadmin/plugins/order_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/plugins/order_statistic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xadmin/plugins/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/plugins/utils.py" afterDir="false" />
