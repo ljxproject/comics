@@ -31,10 +31,6 @@ class MyViewBackend(object):
         return False
 
     def is_valid_token(self):
-        # if hasattr(self, "token"):
-        #     user = self.is_login()
-        #     if user and getattr(self, "token") == user.token:
-        #         return user
         # todo
         if hasattr(self, "token") and hasattr(self, "email") and r1.get(getattr(self, "email")):
             if eval(r1.get(getattr(self, "email")))["token"] == getattr(self, "token"):

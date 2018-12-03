@@ -1,182 +1,85 @@
 from django.test import TestCase
 
-from enum import unique, Enum
+
+class AnimalType(type):
+    allow_l = []
+
+    def __new__(cls, name, bases, attrs):
+        print(name, bases, attrs)
+        update_attrs = {}
+        for k, v in attrs.items():
+            if k.startswith("__"):
+                update_attrs[k] = v
+
+            elif k == "age":
+                update_attrs[k] = v
+
+            elif callable(v):
+                update_attrs[k] = v
+            else:
+                cls.allow_l.append(k)
+                pass
+        update_attrs["allow_l"] = cls.allow_l
+        # update_attrs["allow"] = cls.allow()
+        return super(AnimalType, cls).__new__(cls, name, bases, update_attrs)
 
 
-class EnumBase(object):
-    error_dict = {}
-    category_dict = {}
-    comic_dict = {}
+class Animal(metaclass=AnimalType):
+    # __metaclass__ = AnimalType
+    # def __init__(self):
+    #     print(self.__class__)
+    # def add(self):
+    #     return self.add()
+    name = None
+    age = None
 
-    @staticmethod
-    def _get_name():
-        pass
+    def __init__(self, **kwargs):
+        print(dir(self))
+        for k, v in kwargs.items():
+            if k in self.allow_l:
+                print(k, v)
+                self.name = v
+                setattr(self, "%s" % k, self)
+        print(dir(self), "af")
+        print(self.name)
 
-    @classmethod
-    def set_d(cls):
-        for i in EnumBase.__subclasses__():
-            tp, lang = cls.get_dict(i)
-            if tp == "error":
-                EnumBase.error_dict[lang] = i
-            elif tp == "category":
-                EnumBase.category_dict[lang] = i
-            elif tp == "comic":
-                EnumBase.comic_dict[lang] = i
 
-    @classmethod
-    def get_status_obj(cls, o, name):
-        obj = getattr(o, name)
-        return obj
-
-    @classmethod
-    def get_dict(cls, o):
-        name = o._get_name()
-        return tuple(name.split("_"))
-
-    @classmethod
-    def get_status(cls, i, o, lang="en"):
-        name = o.get_name_from_value(i)
-        tp = cls.get_dict(o)[0]
-        dic = getattr(EnumBase, "%s_dict" % tp)
-        obj = dic[lang]
-        obj = cls.get_status_obj(obj, name)
-        value = i
-        name = obj.value.replace("_", " ").title()
-        status = {
-            "status": value,
-            "msg": name
-        }
-        return status
-
-    @classmethod
-    def get_status_default_name(cls, i, o):
-        name = o.get_name_from_value(i).replace("_", " ").title()
+    def first_name(self):
+        name = self.name[0]
         return name
 
+    pass
 
 
-@unique
-class CategoryZh(EnumBase, Enum):
-    """主编推荐"""
-    editor_recommend = 1
-    """完结推荐"""
-    finish_recommend = 2
-    """热门推荐"""
-    trend_recommend = 3
-    """中漫"""
-    manhua = 10
-    """日漫"""
-    manga = 11
-
-    @staticmethod
-    def _get_name():
-        return "category_zh"
-
-    @staticmethod
-    def get_name_from_value(num):
-        for i in CategoryZh.__members__.values():
-            if i.value == num:
-                return i.name
-
-
-@unique
-class CategoryMy(EnumBase, Enum):
-    """主编推荐"""
-    editor_recommend = "my_ed"
-    """完结推荐"""
-    finish_recommend = "my_fi"
-    """热门推荐"""
-    trend_recommend = "my_tr"
-    """中漫"""
-    manhua = "my_mh"
-    """日漫"""
-    manga = "my_mg"
-
-    @staticmethod
-    def _get_name():
-        return "category_my"
-
-
-@unique
-class CategoryEy(EnumBase, Enum):
-    """主编推荐"""
-    editor_recommend = "ey_ed"
-    """完结推荐"""
-    finish_recommend = "ey_fi"
-    """热门推荐"""
-    trend_recommend = "ey_tr"
-    """中漫"""
-    manhua = "ey_mh"
-    """日漫"""
-    manga = "ey_mg"
-
-    @staticmethod
-    def _get_name():
-        return "category_en"
-
-
-@unique
-class ComicZh(EnumBase, Enum):
-    """空"""
-    none = 0
-    """已完结"""
-    finish = 1001
-    """连载中"""
-    serial = 1002
-    """免费"""
-    free = 1003
-
-    @staticmethod
-    def _get_name():
-        return "comic_zh"
-
-    @staticmethod
-    def get_name_from_value(num):
-        for i in ComicZh.__members__.values():
-            if i.value == num:
-                return i.name
-
-
-@unique
-class ComicMy(EnumBase, Enum):
-    """空"""
-    none = "my_n"
-    """已完结"""
-    finish = "my_f"
-    """连载中"""
-    serial = "my_se"
-    """免费"""
-    free = "my_fr"
-
-    @staticmethod
-    def _get_name():
-        return "comic_my"
-
-
-# @unique
-# class EN(EnumBase, Enum):
-#     name = "AAA"
-#     age = 10
+# class PlantType(type):
+#     def __new__(cls, name, bases, attrs):
+#         attrs['delete'] = cls.winter(cls)
 #
-#     # pass
-#     @staticmethod
-#     def __get_name__():
-#         return "error_en"
+#         super(PlantType, cls).__new__(cls, name, bases, attrs)
 #
-#
-# @unique
-# class ZH(EnumBase, Enum):
-#     name = 100
-#
-#     @staticmethod
-#     def get_name_from_value(num):
-#         for i in ZH.__members__.values():
-#             if i.value == num:
-#                 return i.name
+#     def winter(self):
+#         return "变成植物"
 
 
-EnumBase.set_d()
+# class Plant(metaclass=PlantType):
+#     pass
 
-# print(EnumBase.get_category_status(2))
-# print(EnumBase.get_category_status(2,"my"))
-# print(EnumBase.get_comic_status(1002, "my"))
+
+# class WormGrass(object):
+#     name = None
+#
+#     def __init__(self, **kwargs):
+#         self.name = kwargs.get("name")
+
+
+# def behavior(self):
+#     print("夏天%s，冬天%s" % (self.summer(), self.winter()))
+
+
+# wormgrass = WormGrass()
+# wormgrass.behavior()
+
+# print(wormgrass.summer())
+# a = WormGrass()
+a = Animal(name="ABC")
+print(a.name.first_name(), "la")

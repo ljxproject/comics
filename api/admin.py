@@ -28,7 +28,7 @@ class ImgResourceAdmin(object):
 
 @xadmin.sites.register(Search)
 class SearchAdmin(object):
-    list_display = ["com_id", "en_title", "vi_title", "ms_title"]
+    list_display = ["com_id", "zh_title", "en_title", "vi_title", "ms_title"]
     list_per_page = 20
     model_icon = 'fa fa-search'
 

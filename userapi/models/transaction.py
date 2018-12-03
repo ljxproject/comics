@@ -16,6 +16,7 @@ class Transaction(models.Model, Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     pay_time = models.DateTimeField(null=True, default=None, verbose_name="支付时间")
     status = models.IntegerField(default=0, choices=TransactionStatus_CHOICES, verbose_name="当前支付状态")
+    receipt_id = models.BigIntegerField(null=True, blank=True, verbose_name="第三方交易凭证ID")
 
     class Meta:
         verbose_name_plural = "交易记录"

@@ -8,8 +8,9 @@ from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.response import Response
 from PIL import Image
 
+from userapi.helpers import ReceiptValidation
 from userapi.models import FeedBack, PurchaseAndFavorite, Permission, Transaction, User
-from api.helpers import EnumBase, r1, MyViewBackend, set_attr, img_handler, r
+from api.helpers import EnumBase, r1, MyViewBackend, set_attr, img_handler, r, r5
 from api.helpers.code import CodeEn
 from api.helpers.comic_method import ComicMethod
 from api.helpers.make_order import make_order
@@ -75,7 +76,7 @@ class ChangeEmailViewSet(viewsets.ModelViewSet, MyViewBackend):
             user.save()
             r1.delete(getattr(self, "token"))
 
-        except :
+        except:
             return EnumBase.get_status(636, CodeEn, lang)  # 该用户信息更改失败
 
         else:
@@ -174,7 +175,6 @@ class ChangeNameViewSet(viewsets.ModelViewSet, MyViewBackend):
 
 
 class ChangeWalletViewSet(viewsets.ViewSet, MyViewBackend):
-
     @set_attr
     def post(self, request):
         data = self.wallet_update()
@@ -183,24 +183,28 @@ class ChangeWalletViewSet(viewsets.ViewSet, MyViewBackend):
 
     def wallet_update(self):
         tx_id = getattr(self, "tx_id")
+        apple_receipt = getattr(self, "receipt_data")
         lang = getattr(self, "lang", "ms")
         try:
             t = Transaction.get(tx_id=tx_id)
-            if t.status != 0:
-                return EnumBase.get_status(660, CodeEn, lang)
             email = t.email
+            setattr(self, "email", email)
+            if t.status != 0:
+                User.filter(email=email).update(login_lock=0)
+                return EnumBase.get_status(660, CodeEn, lang)
             gmv = t.gmv
             platform = t.platform
-            setattr(self, "email", email)
             data = self._pre_check()
             if isinstance(data, dict):
-                # user = pickle.loads(r1.get(email))
-                # ttl = r1.ttl(email)
-                # user.login_lock = 0
-                # r1.set(email, pickle.dumps(user), ttl)
                 User.filter(email=email).update(login_lock=0)
                 return data
             user = data
+            # 调用苹果接口验证支付凭证
+            receipt_obj = ReceiptValidation(apple_receipt, 3)
+            status, transaction_id = receipt_obj.send()
+            if status != 0 or transaction_id and r5.get(transaction_id):
+                User.filter(email=email).update(login_lock=0)
+                return EnumBase.get_status(660, CodeEn, lang)  # 未知错误
             if platform == "ios":
                 wallet_obj = float(user.wallet_ios)
                 wallet = '%.2f' % (wallet_obj + float(gmv))
@@ -214,9 +218,11 @@ class ChangeWalletViewSet(viewsets.ViewSet, MyViewBackend):
             user.save()
             # r1.set(email, pickle.dumps(user), ttl)
             t.pay_time = timezone.now()
+            t.receipt_id = transaction_id
             t.status = 1
             t.save()
-        except:
+            r5.setex(transaction_id, tx_id, 7 * 24 * 60 * 60)  # 一周
+        except Exception as e:
             return EnumBase.get_status(636, CodeEn, lang)  # 该用户信息更改失败
         else:
             return ComicMethod.pack_success_data()

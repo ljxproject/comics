@@ -23,6 +23,7 @@ class User(models.Model, Model):
     bind = models.CharField(max_length=100, blank=True, null=True, verbose_name="第三方绑定ID")
     active = models.BooleanField(default=0, verbose_name="是否在线")
     accumulative_time = models.IntegerField(default=0, verbose_name="累计登录时长（小时）")
+    country = models.CharField(max_length=32, verbose_name="用户所在地")
 
     class Meta:
         verbose_name_plural = "用户"
@@ -30,4 +31,5 @@ class User(models.Model, Model):
 
     def show_accumulative_time(self):
         return "%.2f" % (self.accumulative_time / 3600)
+
     show_accumulative_time.__name__ = "累计登录时长（小时）"

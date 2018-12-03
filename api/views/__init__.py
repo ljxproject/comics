@@ -1,7 +1,7 @@
 from api.views.view_listbase import ComicsListBaseView
 from api.views.comics_info import ComicInfoViewSet, ChapterInfoViewSet
 from api.views.index import IndexComicsListViewSet
-from api.views.index import get_index
+# from api.views.index import get_index
 from api.views.comics_detail import get_comics_detail
 from api.views.purchase_chapter import PurchaseChapterViewSet
 from api.views.fuzzy_search import get_fuzzy_search_comics

@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^comment/list/$', CommentListViewSet.as_view({'post': "post"})),
     url(r'^comment/release/$', CommentUpdateViewSet.as_view({'post': "post"})),
 
-    url(r'^feedback/c-r/$', feedback_detail_return, name='fbdr')
+    url(r'^feedback/c-r/$', feedback_detail_return, name='fbdr'),
+    url(r'^feedback/c-r/$', feedback_detail_return, name='fbdr'),
 ]

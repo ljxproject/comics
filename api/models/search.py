@@ -24,6 +24,12 @@ class Search(models.Model, Model):
     ms_subtitle = models.TextField(null=True, blank=True, verbose_name="漫画副标题(ms)")
     ms_introduction = models.TextField(null=True, blank=True, verbose_name="漫画简介(ms)")
 
+    """汉语zh"""
+    zh_title = models.CharField(null=True, blank=True, max_length=100, verbose_name="漫画名(zh)")
+    zh_author = models.CharField(null=True, blank=True, max_length=100, verbose_name="漫画作者(zh)")
+    zh_subtitle = models.TextField(null=True, blank=True, verbose_name="漫画副标题(zh)")
+    zh_introduction = models.TextField(null=True, blank=True, verbose_name="漫画简介(zh)")
+
     class Meta:
         verbose_name_plural = "漫画检索"
         app_label = "api"

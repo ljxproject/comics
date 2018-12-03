@@ -13,9 +13,11 @@ from api.helpers.serializer import ComicsSuccessSerializer
 from userapi.sms_task import send_email
 from userapi.pay_task import logout
 from userapi.models import User
+from userapi.helpers import real_ip
 
 
 class UsersLogin(viewsets.ViewSet, MyViewBackend):
+    ip = None
     """
     define user login logout register interfaces
     """
@@ -37,6 +39,7 @@ class UsersLogin(viewsets.ViewSet, MyViewBackend):
         :return: API data
         """
         if self.is_valid_lang():
+            self.ip = real_ip.get_real_ip(request)
             data = self.login()
         else:
             data = EnumBase.get_status(642, CodeEn)  # 暂无此语言
@@ -57,8 +60,12 @@ class UsersLogin(viewsets.ViewSet, MyViewBackend):
             elif not self.is_exist_email(email):
                 return EnumBase.get_status(632, CodeEn, lang)  # 该用户已存在
             else:
-                user = User(email=email, wallet_ios="5.00", wallet_android="5.00", bind=bind_id,
-                            active=1, accumulative_time=0)
+                if self.ip and self.ip != "127.0.0.1":
+                    country = real_ip.send(self.ip)
+                else:
+                    country = None
+                user = User(email=email, wallet_ios="5.00", wallet_android="0.00", bind=bind_id,
+                            active=1, accumulative_time=0, country=country)
                 user.save()
                 return user
         else:
