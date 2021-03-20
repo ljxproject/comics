@@ -37,7 +37,7 @@ ipython-genutils==0.2.0
 itypes==1.1.0
 jdcal==1.4
 jedi==0.12.0
-Jinja2==2.10
+Jinja2==2.11.3
 kombu==3.0.37
 Markdown==2.6.11
 MarkupSafe==1.0
